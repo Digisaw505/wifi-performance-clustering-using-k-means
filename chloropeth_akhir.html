@@ -1,0 +1,1800 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    
+        <script>
+            L_NO_TOUCH = false;
+            L_DISABLE_3D = false;
+        </script>
+    
+    <style>html, body {width: 100%;height: 100%;margin: 0;padding: 0;}</style>
+    <style>#map {position:absolute;top:0;bottom:0;right:0;left:0;}</style>
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.0/css/all.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css"/>
+    
+            <meta name="viewport" content="width=device-width,
+                initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+            <style>
+                #map_a3520191679fc65bbe1e73b0b06ee88e {
+                    position: relative;
+                    width: 100.0%;
+                    height: 100.0%;
+                    left: 0.0%;
+                    top: 0.0%;
+                }
+                .leaflet-container { font-size: 1rem; }
+            </style>
+        
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.5/d3.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet.markercluster/1.1.0/leaflet.markercluster.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet.markercluster/1.1.0/MarkerCluster.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet.markercluster/1.1.0/MarkerCluster.Default.css"/>
+</head>
+<body>
+    
+    
+            <div class="folium-map" id="map_a3520191679fc65bbe1e73b0b06ee88e" ></div>
+        
+</body>
+<script>
+    
+    
+            var map_a3520191679fc65bbe1e73b0b06ee88e = L.map(
+                "map_a3520191679fc65bbe1e73b0b06ee88e",
+                {
+                    center: [-6.3704435, 106.618759],
+                    crs: L.CRS.EPSG3857,
+                    zoom: 12,
+                    zoomControl: true,
+                    preferCanvas: false,
+                }
+            );
+
+            
+
+        
+    
+            var tile_layer_a2d2dfef23c2eb1426edd9ce2361ca96 = L.tileLayer(
+                "https://tile.openstreetmap.org/{z}/{x}/{y}.png",
+                {"attribution": "\u0026copy; \u003ca href=\"https://www.openstreetmap.org/copyright\"\u003eOpenStreetMap\u003c/a\u003e contributors", "detectRetina": false, "maxNativeZoom": 19, "maxZoom": 19, "minZoom": 0, "noWrap": false, "opacity": 1, "subdomains": "abc", "tms": false}
+            );
+        
+    
+            tile_layer_a2d2dfef23c2eb1426edd9ce2361ca96.addTo(map_a3520191679fc65bbe1e73b0b06ee88e);
+        
+    
+            var choropleth_84228ea78733172fe79dda3663fb4061 = L.featureGroup(
+                {}
+            );
+        
+    
+        function geo_json_3aac920fac1283f2a928d4e84ff3bccc_styler(feature) {
+            switch(feature.properties.No) {
+                case 1: case 55: case 57: 
+                    return {"color": "black", "fillColor": "#31a354", "fillOpacity": 0.7, "opacity": 0.2, "weight": 1};
+                case 2: case 12: case 13: case 16: case 32: case 37: case 41: case 43: 
+                    return {"color": "black", "fillColor": "#addd8e", "fillOpacity": 0.7, "opacity": 0.2, "weight": 1};
+                case 3: case 4: case 5: case 6: case 10: case 11: case 28: case 29: case 35: case 40: case 42: case 44: case 47: case 52: case 53: case 54: 
+                    return {"color": "black", "fillColor": "#78c679", "fillOpacity": 0.7, "opacity": 0.2, "weight": 1};
+                case 7: case 18: case 20: case 21: case 23: case 24: case 26: case 50: case 60: 
+                    return {"color": "black", "fillColor": "#006837", "fillOpacity": 0.7, "opacity": 0.2, "weight": 1};
+                case 8: case 9: case 19: case 22: case 25: case 27: case 30: case 31: case 49: case 51: case 58: case 59: 
+                    return {"color": "black", "fillColor": "#ffffcc", "fillOpacity": 0.7, "opacity": 0.2, "weight": 1};
+                default:
+                    return {"color": "black", "fillColor": "#d9f0a3", "fillOpacity": 0.7, "opacity": 0.2, "weight": 1};
+            }
+        }
+
+        function geo_json_3aac920fac1283f2a928d4e84ff3bccc_onEachFeature(feature, layer) {
+            layer.on({
+            });
+        };
+        var geo_json_3aac920fac1283f2a928d4e84ff3bccc = L.geoJson(null, {
+                onEachFeature: geo_json_3aac920fac1283f2a928d4e84ff3bccc_onEachFeature,
+            
+                style: geo_json_3aac920fac1283f2a928d4e84ff3bccc_styler,
+        });
+
+        function geo_json_3aac920fac1283f2a928d4e84ff3bccc_add (data) {
+            geo_json_3aac920fac1283f2a928d4e84ff3bccc
+                .addData(data);
+        }
+            geo_json_3aac920fac1283f2a928d4e84ff3bccc_add({"features": [{"geometry": {"coordinates": [106.8235482, -6.3705339], "type": "Point"}, "properties": {"Buffer (%)": 0, "Cluster": 4, "Download": 15.4, "Gedung": "GSG", "Load Time (ms)": 1224, "Maksimal Resolution": 2160, "No": 1, "RSSI (dBm)": -47, "Tempat": "Dalam R Rapat Upatik GSG", "Upload": 13.4, "latitude": -6.3705339, "longitude": 106.8235482}, "type": "Feature"}, {"geometry": {"coordinates": [106.8235482, -6.3705339], "type": "Point"}, "properties": {"Buffer (%)": 0, "Cluster": 2, "Download": 55.1, "Gedung": "GSG", "Load Time (ms)": 4086, "Maksimal Resolution": 480, "No": 2, "RSSI (dBm)": -55, "Tempat": "Depan R Rapat Upatik 1M GSG", "Upload": 65.0, "latitude": -6.3705339, "longitude": 106.8235482}, "type": "Feature"}, {"geometry": {"coordinates": [106.8235482, -6.3705339], "type": "Point"}, "properties": {"Buffer (%)": 32, "Cluster": 3, "Download": 41.3, "Gedung": "GSG", "Load Time (ms)": 1868, "Maksimal Resolution": 480, "No": 3, "RSSI (dBm)": -64, "Tempat": "Depan R Rapat Upatik 3M GSG", "Upload": 60.2, "latitude": -6.3705339, "longitude": 106.8235482}, "type": "Feature"}, {"geometry": {"coordinates": [106.8235482, -6.3705339], "type": "Point"}, "properties": {"Buffer (%)": 35, "Cluster": 3, "Download": 44.4, "Gedung": "GSG", "Load Time (ms)": 1212, "Maksimal Resolution": 480, "No": 4, "RSSI (dBm)": -61, "Tempat": "Depan R Rapat Upatik 5M GSG", "Upload": 56.8, "latitude": -6.3705339, "longitude": 106.8235482}, "type": "Feature"}, {"geometry": {"coordinates": [106.8235482, -6.3705339], "type": "Point"}, "properties": {"Buffer (%)": 33, "Cluster": 3, "Download": 41.8, "Gedung": "GSG", "Load Time (ms)": 845, "Maksimal Resolution": 480, "No": 5, "RSSI (dBm)": -47, "Tempat": "Depan Loket Upatik 1M GSG", "Upload": 52.0, "latitude": -6.3705339, "longitude": 106.8235482}, "type": "Feature"}, {"geometry": {"coordinates": [106.8235482, -6.3705339], "type": "Point"}, "properties": {"Buffer (%)": 20, "Cluster": 3, "Download": 44.5, "Gedung": "GSG", "Load Time (ms)": 885, "Maksimal Resolution": 1440, "No": 6, "RSSI (dBm)": -52, "Tempat": "Depan Loket Upatik 3M GSG", "Upload": 52.4, "latitude": -6.3705339, "longitude": 106.8235482}, "type": "Feature"}, {"geometry": {"coordinates": [106.8235482, -6.3705339], "type": "Point"}, "properties": {"Buffer (%)": 0, "Cluster": 5, "Download": 10.4, "Gedung": "GSG", "Load Time (ms)": 424, "Maksimal Resolution": 2160, "No": 7, "RSSI (dBm)": -69, "Tempat": "Depan Loket Upatik 5M GSG", "Upload": 35.3, "latitude": -6.3705339, "longitude": 106.8235482}, "type": "Feature"}, {"geometry": {"coordinates": [106.8235482, -6.3705339], "type": "Point"}, "properties": {"Buffer (%)": 0, "Cluster": 0, "Download": 39.9, "Gedung": "GSG", "Load Time (ms)": 443, "Maksimal Resolution": 1440, "No": 8, "RSSI (dBm)": -46, "Tempat": "Depan R Ikapunija", "Upload": 36.2, "latitude": -6.3705339, "longitude": 106.8235482}, "type": "Feature"}, {"geometry": {"coordinates": [106.8235482, -6.3705339], "type": "Point"}, "properties": {"Buffer (%)": 0, "Cluster": 0, "Download": 46.4, "Gedung": "GSG", "Load Time (ms)": 451, "Maksimal Resolution": 2160, "No": 9, "RSSI (dBm)": -54, "Tempat": "Dalam Aula GSG", "Upload": 62.5, "latitude": -6.3705339, "longitude": 106.8235482}, "type": "Feature"}, {"geometry": {"coordinates": [106.8235482, -6.3705339], "type": "Point"}, "properties": {"Buffer (%)": 0, "Cluster": 3, "Download": 54.5, "Gedung": "GSG", "Load Time (ms)": 551, "Maksimal Resolution": 480, "No": 10, "RSSI (dBm)": -55, "Tempat": "Depan Mushollah 1M GSG", "Upload": 60.7, "latitude": -6.3705339, "longitude": 106.8235482}, "type": "Feature"}, {"geometry": {"coordinates": [106.8235482, -6.3705339], "type": "Point"}, "properties": {"Buffer (%)": 0, "Cluster": 3, "Download": 65.1, "Gedung": "GSG", "Load Time (ms)": 601, "Maksimal Resolution": 480, "No": 11, "RSSI (dBm)": -48, "Tempat": "Depan Mushollah 3M GSG", "Upload": 62.5, "latitude": -6.3705339, "longitude": 106.8235482}, "type": "Feature"}, {"geometry": {"coordinates": [106.8235482, -6.3705339], "type": "Point"}, "properties": {"Buffer (%)": 0, "Cluster": 2, "Download": 14.3, "Gedung": "GSG", "Load Time (ms)": 1013, "Maksimal Resolution": 480, "No": 12, "RSSI (dBm)": -48, "Tempat": "Dalam R 211 GSG", "Upload": 9.9, "latitude": -6.3705339, "longitude": 106.8235482}, "type": "Feature"}, {"geometry": {"coordinates": [106.8235482, -6.3705339], "type": "Point"}, "properties": {"Buffer (%)": 0, "Cluster": 2, "Download": 8.7, "Gedung": "GSG", "Load Time (ms)": 3152, "Maksimal Resolution": 480, "No": 13, "RSSI (dBm)": -63, "Tempat": "Dalam R 212 GSG", "Upload": 1.7, "latitude": -6.3705339, "longitude": 106.8235482}, "type": "Feature"}, {"geometry": {"coordinates": [106.8235482, -6.3705339], "type": "Point"}, "properties": {"Buffer (%)": 20, "Cluster": 1, "Download": 29.8, "Gedung": "GSG", "Load Time (ms)": 770, "Maksimal Resolution": 480, "No": 14, "RSSI (dBm)": -72, "Tempat": "Depan R 208 GSG", "Upload": 35.1, "latitude": -6.3705339, "longitude": 106.8235482}, "type": "Feature"}, {"geometry": {"coordinates": [106.8235482, -6.3705339], "type": "Point"}, "properties": {"Buffer (%)": 36, "Cluster": 1, "Download": 6.6, "Gedung": "GSG", "Load Time (ms)": 674, "Maksimal Resolution": 480, "No": 15, "RSSI (dBm)": -70, "Tempat": "Depan R Lab 1M GSG", "Upload": 1.0, "latitude": -6.3705339, "longitude": 106.8235482}, "type": "Feature"}, {"geometry": {"coordinates": [106.8235482, -6.3705339], "type": "Point"}, "properties": {"Buffer (%)": 0, "Cluster": 2, "Download": 5.1, "Gedung": "GSG", "Load Time (ms)": 626, "Maksimal Resolution": 480, "No": 16, "RSSI (dBm)": -85, "Tempat": "Depan R Lab 3M GSG", "Upload": 11.2, "latitude": -6.3705339, "longitude": 106.8235482}, "type": "Feature"}, {"geometry": {"coordinates": [106.8235482, -6.3705339], "type": "Point"}, "properties": {"Buffer (%)": 30, "Cluster": 1, "Download": 3.7, "Gedung": "GSG", "Load Time (ms)": 1392, "Maksimal Resolution": 480, "No": 17, "RSSI (dBm)": -62, "Tempat": "Depan R Lab 5M GSG", "Upload": 2.8, "latitude": -6.3705339, "longitude": 106.8235482}, "type": "Feature"}, {"geometry": {"coordinates": [106.8238803, -6.3724893], "type": "Point"}, "properties": {"Buffer (%)": 0, "Cluster": 5, "Download": 12.1, "Gedung": "AA", "Load Time (ms)": 661, "Maksimal Resolution": 2160, "No": 18, "RSSI (dBm)": -78, "Tempat": "Depan Admin JTIK Gd AA", "Upload": 36.5, "latitude": -6.3725189, "longitude": 106.8238803}, "type": "Feature"}, {"geometry": {"coordinates": [106.8238803, -6.3724893], "type": "Point"}, "properties": {"Buffer (%)": 0, "Cluster": 0, "Download": 53.4, "Gedung": "AA", "Load Time (ms)": 554, "Maksimal Resolution": 2160, "No": 19, "RSSI (dBm)": -47, "Tempat": "Depan R Server Gd AA", "Upload": 58.4, "latitude": -6.3725189, "longitude": 106.8238803}, "type": "Feature"}, {"geometry": {"coordinates": [106.8238803, -6.3724893], "type": "Point"}, "properties": {"Buffer (%)": 0, "Cluster": 6, "Download": 41.9, "Gedung": "AA", "Load Time (ms)": 492, "Maksimal Resolution": 2160, "No": 20, "RSSI (dBm)": -66, "Tempat": "Dalam R 303 Gd AA", "Upload": 42.3, "latitude": -6.3725189, "longitude": 106.8238803}, "type": "Feature"}, {"geometry": {"coordinates": [106.8238803, -6.3724893], "type": "Point"}, "properties": {"Buffer (%)": 0, "Cluster": 6, "Download": 38.5, "Gedung": "AA", "Load Time (ms)": 504, "Maksimal Resolution": 2160, "No": 21, "RSSI (dBm)": -69, "Tempat": "Depan R 304 Gd AA", "Upload": 40.6, "latitude": -6.3725189, "longitude": 106.8238803}, "type": "Feature"}, {"geometry": {"coordinates": [106.8238803, -6.3724893], "type": "Point"}, "properties": {"Buffer (%)": 0, "Cluster": 0, "Download": 51.5, "Gedung": "AA", "Load Time (ms)": 509, "Maksimal Resolution": 2160, "No": 22, "RSSI (dBm)": -52, "Tempat": "Depan R 305 Gd AA", "Upload": 63.2, "latitude": -6.3725189, "longitude": 106.8238803}, "type": "Feature"}, {"geometry": {"coordinates": [106.8238803, -6.3724893], "type": "Point"}, "properties": {"Buffer (%)": 0, "Cluster": 6, "Download": 40.0, "Gedung": "AA", "Load Time (ms)": 409, "Maksimal Resolution": 2160, "No": 23, "RSSI (dBm)": -60, "Tempat": "Dalam R 304 Gd AA", "Upload": 57.2, "latitude": -6.3725189, "longitude": 106.8238803}, "type": "Feature"}, {"geometry": {"coordinates": [106.8238803, -6.3724893], "type": "Point"}, "properties": {"Buffer (%)": 0, "Cluster": 6, "Download": 52.2, "Gedung": "AA", "Load Time (ms)": 468, "Maksimal Resolution": 2160, "No": 24, "RSSI (dBm)": -68, "Tempat": "Depan R 205 Gd AA", "Upload": 45.7, "latitude": -6.3725189, "longitude": 106.8238803}, "type": "Feature"}, {"geometry": {"coordinates": [106.8238803, -6.3724893], "type": "Point"}, "properties": {"Buffer (%)": 0, "Cluster": 0, "Download": 54.7, "Gedung": "AA", "Load Time (ms)": 407, "Maksimal Resolution": 2160, "No": 25, "RSSI (dBm)": -45, "Tempat": "Dalam R 204 Gd AA", "Upload": 66.6, "latitude": -6.3725189, "longitude": 106.8238803}, "type": "Feature"}, {"geometry": {"coordinates": [106.8238803, -6.3724893], "type": "Point"}, "properties": {"Buffer (%)": 0, "Cluster": 6, "Download": 41.3, "Gedung": "AA", "Load Time (ms)": 427, "Maksimal Resolution": 2160, "No": 26, "RSSI (dBm)": -66, "Tempat": "Dalam R 205 Gd AA", "Upload": 52.4, "latitude": -6.3725189, "longitude": 106.8238803}, "type": "Feature"}, {"geometry": {"coordinates": [106.8238803, -6.3724893], "type": "Point"}, "properties": {"Buffer (%)": 0, "Cluster": 0, "Download": 46.3, "Gedung": "AA", "Load Time (ms)": 530, "Maksimal Resolution": 2160, "No": 27, "RSSI (dBm)": -58, "Tempat": "Depan R 201 Gd AA", "Upload": 56.7, "latitude": -6.3725189, "longitude": 106.8238803}, "type": "Feature"}, {"geometry": {"coordinates": [106.8238803, -6.3724893], "type": "Point"}, "properties": {"Buffer (%)": 26, "Cluster": 3, "Download": 52.4, "Gedung": "AA", "Load Time (ms)": 2491, "Maksimal Resolution": 480, "No": 28, "RSSI (dBm)": -50, "Tempat": "Dalam R 201 Gd AA", "Upload": 65.1, "latitude": -6.3725189, "longitude": 106.8238803}, "type": "Feature"}, {"geometry": {"coordinates": [106.8238803, -6.3724893], "type": "Point"}, "properties": {"Buffer (%)": 0, "Cluster": 3, "Download": 52.2, "Gedung": "AA", "Load Time (ms)": 686, "Maksimal Resolution": 480, "No": 29, "RSSI (dBm)": -48, "Tempat": "Dalam R 302 Gd AA", "Upload": 59.0, "latitude": -6.3725189, "longitude": 106.8238803}, "type": "Feature"}, {"geometry": {"coordinates": [106.8238803, -6.3724893], "type": "Point"}, "properties": {"Buffer (%)": 0, "Cluster": 0, "Download": 49.6, "Gedung": "AA", "Load Time (ms)": 378, "Maksimal Resolution": 2160, "No": 30, "RSSI (dBm)": -42, "Tempat": "Dalam R 305 Gd AA", "Upload": 58.8, "latitude": -6.3725189, "longitude": 106.8238803}, "type": "Feature"}, {"geometry": {"coordinates": [106.8238803, -6.3724893], "type": "Point"}, "properties": {"Buffer (%)": 0, "Cluster": 0, "Download": 48.8, "Gedung": "AA", "Load Time (ms)": 329, "Maksimal Resolution": 2160, "No": 31, "RSSI (dBm)": -51, "Tempat": "Dalam R Server Gd AA", "Upload": 58.0, "latitude": -6.3725189, "longitude": 106.8238803}, "type": "Feature"}, {"geometry": {"coordinates": [106.8232469, -6.3714562], "type": "Point"}, "properties": {"Buffer (%)": 0, "Cluster": 2, "Download": 28.2, "Gedung": "A", "Load Time (ms)": 1314, "Maksimal Resolution": 480, "No": 32, "RSSI (dBm)": -62, "Tempat": "Depan Layanan Mahasiswa Gd A", "Upload": 19.3, "latitude": -6.3713204, "longitude": 106.8232469}, "type": "Feature"}, {"geometry": {"coordinates": [106.8232469, -6.3714562], "type": "Point"}, "properties": {"Buffer (%)": 33, "Cluster": 1, "Download": 22.5, "Gedung": "A", "Load Time (ms)": 630, "Maksimal Resolution": 480, "No": 33, "RSSI (dBm)": -68, "Tempat": "Depan R 105 Gd A", "Upload": 36.1, "latitude": -6.3713204, "longitude": 106.8232469}, "type": "Feature"}, {"geometry": {"coordinates": [106.8232469, -6.3714562], "type": "Point"}, "properties": {"Buffer (%)": 35, "Cluster": 1, "Download": 10.4, "Gedung": "A", "Load Time (ms)": 698, "Maksimal Resolution": 480, "No": 34, "RSSI (dBm)": -57, "Tempat": "Depan R 109 Gd A", "Upload": 3.8, "latitude": -6.3713204, "longitude": 106.8232469}, "type": "Feature"}, {"geometry": {"coordinates": [106.8232469, -6.3714562], "type": "Point"}, "properties": {"Buffer (%)": 33, "Cluster": 3, "Download": 53.5, "Gedung": "A", "Load Time (ms)": 601, "Maksimal Resolution": 480, "No": 35, "RSSI (dBm)": -64, "Tempat": "Depan Pintu Masuk Gd A", "Upload": 66.2, "latitude": -6.3713204, "longitude": 106.8232469}, "type": "Feature"}, {"geometry": {"coordinates": [106.8232469, -6.3714562], "type": "Point"}, "properties": {"Buffer (%)": 33, "Cluster": 1, "Download": 10.0, "Gedung": "A", "Load Time (ms)": 703, "Maksimal Resolution": 480, "No": 36, "RSSI (dBm)": -71, "Tempat": "Depan R 209 Gd A", "Upload": 10.7, "latitude": -6.3713204, "longitude": 106.8232469}, "type": "Feature"}, {"geometry": {"coordinates": [106.8232469, -6.3714562], "type": "Point"}, "properties": {"Buffer (%)": 0, "Cluster": 2, "Download": 8.1, "Gedung": "A", "Load Time (ms)": 987, "Maksimal Resolution": 480, "No": 37, "RSSI (dBm)": -62, "Tempat": "Dalam R 210 Gd A", "Upload": 4.3, "latitude": -6.3713204, "longitude": 106.8232469}, "type": "Feature"}, {"geometry": {"coordinates": [106.8232469, -6.3714562], "type": "Point"}, "properties": {"Buffer (%)": 34, "Cluster": 1, "Download": 3.1, "Gedung": "A", "Load Time (ms)": 660, "Maksimal Resolution": 480, "No": 38, "RSSI (dBm)": -54, "Tempat": "Depan R Dosen Gd A", "Upload": 3.2, "latitude": -6.3713204, "longitude": 106.8232469}, "type": "Feature"}, {"geometry": {"coordinates": [106.8232469, -6.3714562], "type": "Point"}, "properties": {"Buffer (%)": 33, "Cluster": 1, "Download": 18.3, "Gedung": "A", "Load Time (ms)": 735, "Maksimal Resolution": 480, "No": 39, "RSSI (dBm)": -54, "Tempat": "Depan R 212 Gd A", "Upload": 12.7, "latitude": -6.3713204, "longitude": 106.8232469}, "type": "Feature"}, {"geometry": {"coordinates": [106.8232469, -6.3714562], "type": "Point"}, "properties": {"Buffer (%)": 32, "Cluster": 3, "Download": 51.8, "Gedung": "A", "Load Time (ms)": 691, "Maksimal Resolution": 480, "No": 40, "RSSI (dBm)": -58, "Tempat": "Depan R 207 Gd A", "Upload": 69.7, "latitude": -6.3713204, "longitude": 106.8232469}, "type": "Feature"}, {"geometry": {"coordinates": [106.8234553, -6.3717179], "type": "Point"}, "properties": {"Buffer (%)": 0, "Cluster": 2, "Download": 29.4, "Gedung": "B", "Load Time (ms)": 765, "Maksimal Resolution": 480, "No": 41, "RSSI (dBm)": -61, "Tempat": "Depan R 106 Gd B", "Upload": 7.5, "latitude": -6.3717179, "longitude": 106.8234553}, "type": "Feature"}, {"geometry": {"coordinates": [106.8234553, -6.3717179], "type": "Point"}, "properties": {"Buffer (%)": 34, "Cluster": 3, "Download": 33.8, "Gedung": "B", "Load Time (ms)": 653, "Maksimal Resolution": 480, "No": 42, "RSSI (dBm)": -70, "Tempat": "Depan R 109 Gd B", "Upload": 40.2, "latitude": -6.3717179, "longitude": 106.8234553}, "type": "Feature"}, {"geometry": {"coordinates": [106.8234553, -6.3717179], "type": "Point"}, "properties": {"Buffer (%)": 0, "Cluster": 2, "Download": 39.3, "Gedung": "B", "Load Time (ms)": 676, "Maksimal Resolution": 480, "No": 43, "RSSI (dBm)": -59, "Tempat": "Depan R 110 Gd B", "Upload": 53.3, "latitude": -6.3717179, "longitude": 106.8234553}, "type": "Feature"}, {"geometry": {"coordinates": [106.8234553, -6.3717179], "type": "Point"}, "properties": {"Buffer (%)": 34, "Cluster": 3, "Download": 49.2, "Gedung": "B", "Load Time (ms)": 696, "Maksimal Resolution": 480, "No": 44, "RSSI (dBm)": -63, "Tempat": "Depan R 116 Gd B", "Upload": 41.8, "latitude": -6.3717179, "longitude": 106.8234553}, "type": "Feature"}, {"geometry": {"coordinates": [106.8234553, -6.3717179], "type": "Point"}, "properties": {"Buffer (%)": 33, "Cluster": 1, "Download": 5.9, "Gedung": "B", "Load Time (ms)": 598, "Maksimal Resolution": 480, "No": 45, "RSSI (dBm)": -64, "Tempat": "Pendopo Gd B", "Upload": 6.0, "latitude": -6.3717179, "longitude": 106.8234553}, "type": "Feature"}, {"geometry": {"coordinates": [106.8234907, -6.3720697], "type": "Point"}, "properties": {"Buffer (%)": 24, "Cluster": 1, "Download": 25.3, "Gedung": "C", "Load Time (ms)": 609, "Maksimal Resolution": 480, "No": 46, "RSSI (dBm)": -74, "Tempat": "Depang Gudang ECWS Gd C", "Upload": 31.4, "latitude": -6.3720697, "longitude": 106.8234907}, "type": "Feature"}, {"geometry": {"coordinates": [106.8234907, -6.3720697], "type": "Point"}, "properties": {"Buffer (%)": 33, "Cluster": 3, "Download": 57.4, "Gedung": "C", "Load Time (ms)": 504, "Maksimal Resolution": 480, "No": 47, "RSSI (dBm)": -60, "Tempat": "Tengah Lab Gd C", "Upload": 53.9, "latitude": -6.3720697, "longitude": 106.8234907}, "type": "Feature"}, {"geometry": {"coordinates": [106.8234907, -6.3720697], "type": "Point"}, "properties": {"Buffer (%)": 34, "Cluster": 1, "Download": 36.9, "Gedung": "C", "Load Time (ms)": 506, "Maksimal Resolution": 480, "No": 48, "RSSI (dBm)": -68, "Tempat": "Depan R Dosen Gd C", "Upload": 29.3, "latitude": -6.3720697, "longitude": 106.8234907}, "type": "Feature"}, {"geometry": {"coordinates": [106.8233591, -6.372417], "type": "Point"}, "properties": {"Buffer (%)": 0, "Cluster": 0, "Download": 54.5, "Gedung": "I", "Load Time (ms)": 472, "Maksimal Resolution": 2160, "No": 49, "RSSI (dBm)": -54, "Tempat": "Depan R 104 Gd I", "Upload": 67.2, "latitude": -6.372417, "longitude": 106.8233591}, "type": "Feature"}, {"geometry": {"coordinates": [106.8233591, -6.372417], "type": "Point"}, "properties": {"Buffer (%)": 0, "Cluster": 6, "Download": 42.6, "Gedung": "I", "Load Time (ms)": 536, "Maksimal Resolution": 2160, "No": 50, "RSSI (dBm)": -65, "Tempat": "Tengah Lab Gd I", "Upload": 43.7, "latitude": -6.372417, "longitude": 106.8233591}, "type": "Feature"}, {"geometry": {"coordinates": [106.8233591, -6.372417], "type": "Point"}, "properties": {"Buffer (%)": 0, "Cluster": 0, "Download": 40.4, "Gedung": "I", "Load Time (ms)": 379, "Maksimal Resolution": 2160, "No": 51, "RSSI (dBm)": -54, "Tempat": "Depan Lab Gd I", "Upload": 63.2, "latitude": -6.372417, "longitude": 106.8233591}, "type": "Feature"}, {"geometry": {"coordinates": [106.8233214, -6.3710915], "type": "Point"}, "properties": {"Buffer (%)": 33, "Cluster": 3, "Download": 36.8, "Gedung": "F", "Load Time (ms)": 733, "Maksimal Resolution": 480, "No": 52, "RSSI (dBm)": -71, "Tempat": "Depan R 111 Gd F", "Upload": 50.3, "latitude": -6.3709326, "longitude": 106.8233214}, "type": "Feature"}, {"geometry": {"coordinates": [106.8233214, -6.3710915], "type": "Point"}, "properties": {"Buffer (%)": 33, "Cluster": 3, "Download": 54.3, "Gedung": "F", "Load Time (ms)": 663, "Maksimal Resolution": 480, "No": 53, "RSSI (dBm)": -50, "Tempat": "Depan R 109 Gd F", "Upload": 65.4, "latitude": -6.3709326, "longitude": 106.8233214}, "type": "Feature"}, {"geometry": {"coordinates": [106.8233214, -6.3710915], "type": "Point"}, "properties": {"Buffer (%)": 32, "Cluster": 3, "Download": 57.3, "Gedung": "F", "Load Time (ms)": 683, "Maksimal Resolution": 480, "No": 54, "RSSI (dBm)": -37, "Tempat": "Depan R 106 Gd F", "Upload": 69.6, "latitude": -6.3709326, "longitude": 106.8233214}, "type": "Feature"}, {"geometry": {"coordinates": [106.8233214, -6.3710915], "type": "Point"}, "properties": {"Buffer (%)": 0, "Cluster": 4, "Download": 16.2, "Gedung": "F", "Load Time (ms)": 802, "Maksimal Resolution": 2160, "No": 55, "RSSI (dBm)": -57, "Tempat": "Depan R Dosen Gd F", "Upload": 17.0, "latitude": -6.3709326, "longitude": 106.8233214}, "type": "Feature"}, {"geometry": {"coordinates": [106.8233214, -6.3710915], "type": "Point"}, "properties": {"Buffer (%)": 21, "Cluster": 1, "Download": 7.2, "Gedung": "F", "Load Time (ms)": 561, "Maksimal Resolution": 1080, "No": 56, "RSSI (dBm)": -56, "Tempat": "Depan R 206 Gd F", "Upload": 0.6, "latitude": -6.3709326, "longitude": 106.8233214}, "type": "Feature"}, {"geometry": {"coordinates": [106.8233214, -6.3710915], "type": "Point"}, "properties": {"Buffer (%)": 0, "Cluster": 4, "Download": 10.0, "Gedung": "F", "Load Time (ms)": 2943, "Maksimal Resolution": 2160, "No": 57, "RSSI (dBm)": -50, "Tempat": "Depan R 210 Gd F", "Upload": 3.8, "latitude": -6.3709326, "longitude": 106.8233214}, "type": "Feature"}, {"geometry": {"coordinates": [106.8233214, -6.3710915], "type": "Point"}, "properties": {"Buffer (%)": 0, "Cluster": 0, "Download": 58.4, "Gedung": "F", "Load Time (ms)": 479, "Maksimal Resolution": 2160, "No": 58, "RSSI (dBm)": -57, "Tempat": "Depan R 313 Gd F", "Upload": 71.1, "latitude": -6.3709326, "longitude": 106.8233214}, "type": "Feature"}, {"geometry": {"coordinates": [106.8233214, -6.3710915], "type": "Point"}, "properties": {"Buffer (%)": 0, "Cluster": 0, "Download": 56.5, "Gedung": "F", "Load Time (ms)": 401, "Maksimal Resolution": 2160, "No": 59, "RSSI (dBm)": -36, "Tempat": "Depan Lab Komputer Gd F", "Upload": 49.1, "latitude": -6.3709326, "longitude": 106.8233214}, "type": "Feature"}, {"geometry": {"coordinates": [106.8233214, -6.3710915], "type": "Point"}, "properties": {"Buffer (%)": 0, "Cluster": 6, "Download": 47.1, "Gedung": "F", "Load Time (ms)": 413, "Maksimal Resolution": 2160, "No": 60, "RSSI (dBm)": -70, "Tempat": "Depan R 301 Gd F", "Upload": 52.3, "latitude": -6.3709326, "longitude": 106.8233214}, "type": "Feature"}], "type": "FeatureCollection"});
+
+        
+    
+            geo_json_3aac920fac1283f2a928d4e84ff3bccc.addTo(choropleth_84228ea78733172fe79dda3663fb4061);
+        
+    
+    var color_map_f834c869c2efed0650b96d2e8bbc47cb = {};
+
+    
+    color_map_f834c869c2efed0650b96d2e8bbc47cb.color = d3.scale.threshold()
+              .domain([0.0, 0.012024048096192385, 0.02404809619238477, 0.036072144288577156, 0.04809619238476954, 0.06012024048096192, 0.07214428857715431, 0.0841683366733467, 0.09619238476953908, 0.10821643286573146, 0.12024048096192384, 0.13226452905811623, 0.14428857715430862, 0.156312625250501, 0.1683366733466934, 0.18036072144288579, 0.19238476953907815, 0.20440881763527055, 0.21643286573146292, 0.22845691382765532, 0.24048096192384769, 0.25250501002004005, 0.26452905811623245, 0.27655310621242485, 0.28857715430861725, 0.30060120240480964, 0.312625250501002, 0.3246492985971944, 0.3366733466933868, 0.3486973947895792, 0.36072144288577157, 0.3727454909819639, 0.3847695390781563, 0.3967935871743487, 0.4088176352705411, 0.42084168336673344, 0.43286573146292584, 0.44488977955911824, 0.45691382765531063, 0.46893787575150303, 0.48096192384769537, 0.49298597194388777, 0.5050100200400801, 0.5170340681362725, 0.5290581162324649, 0.5410821643286573, 0.5531062124248497, 0.5651302605210421, 0.5771543086172345, 0.5891783567134269, 0.6012024048096193, 0.6132264529058116, 0.625250501002004, 0.6372745490981964, 0.6492985971943888, 0.6613226452905812, 0.6733466933867736, 0.685370741482966, 0.6973947895791583, 0.7094188376753507, 0.7214428857715431, 0.7334669338677354, 0.7454909819639278, 0.7575150300601202, 0.7695390781563126, 0.781563126252505, 0.7935871743486974, 0.8056112224448898, 0.8176352705410822, 0.8296593186372746, 0.8416833667334669, 0.8537074148296593, 0.8657314629258517, 0.8777555110220441, 0.8897795591182365, 0.9018036072144289, 0.9138276553106213, 0.9258517034068137, 0.9378757515030061, 0.9498997995991983, 0.9619238476953907, 0.9739478957915831, 0.9859719438877755, 0.9979959919839679, 1.0100200400801602, 1.0220440881763526, 1.034068136272545, 1.0460921843687374, 1.0581162324649298, 1.0701402805611222, 1.0821643286573146, 1.094188376753507, 1.1062124248496994, 1.1182364729458918, 1.1302605210420842, 1.1422845691382766, 1.154308617234469, 1.1663326653306614, 1.1783567134268538, 1.1903807615230462, 1.2024048096192386, 1.214428857715431, 1.2264529058116231, 1.2384769539078155, 1.250501002004008, 1.2625250501002003, 1.2745490981963927, 1.2865731462925851, 1.2985971943887775, 1.31062124248497, 1.3226452905811623, 1.3346693386773547, 1.346693386773547, 1.3587174348697395, 1.370741482965932, 1.3827655310621243, 1.3947895791583167, 1.406813627254509, 1.4188376753507015, 1.4308617234468939, 1.4428857715430863, 1.4549098196392785, 1.4669338677354709, 1.4789579158316633, 1.4909819639278556, 1.503006012024048, 1.5150300601202404, 1.5270541082164328, 1.5390781563126252, 1.5511022044088176, 1.56312625250501, 1.5751503006012024, 1.5871743486973948, 1.5991983967935872, 1.6112224448897796, 1.623246492985972, 1.6352705410821644, 1.6472945891783568, 1.6593186372745492, 1.6713426853707414, 1.6833667334669338, 1.6953907815631262, 1.7074148296593186, 1.719438877755511, 1.7314629258517034, 1.7434869739478958, 1.7555110220440882, 1.7675350701402806, 1.779559118236473, 1.7915831663326653, 1.8036072144288577, 1.8156312625250501, 1.8276553106212425, 1.839679358717435, 1.8517034068136273, 1.8637274549098197, 1.8757515030060121, 1.8877755511022045, 1.8997995991983967, 1.911823647294589, 1.9238476953907815, 1.9358717434869739, 1.9478957915831663, 1.9599198396793587, 1.971943887775551, 1.9839679358717435, 1.9959919839679359, 2.0080160320641283, 2.0200400801603204, 2.032064128256513, 2.0440881763527052, 2.056112224448898, 2.06813627254509, 2.0801603206412826, 2.092184368737475, 2.1042084168336674, 2.1162324649298596, 2.1282565130260522, 2.1402805611222444, 2.152304609218437, 2.164328657314629, 2.176352705410822, 2.188376753507014, 2.2004008016032066, 2.212424849699399, 2.224448897795591, 2.2364729458917836, 2.2484969939879758, 2.2605210420841684, 2.2725450901803605, 2.284569138276553, 2.2965931863727453, 2.308617234468938, 2.32064128256513, 2.3326653306613228, 2.344689378757515, 2.3567134268537075, 2.3687374749498997, 2.3807615230460923, 2.3927855711422845, 2.404809619238477, 2.4168336673346693, 2.428857715430862, 2.440881763527054, 2.4529058116232463, 2.464929859719439, 2.476953907815631, 2.4889779559118237, 2.501002004008016, 2.5130260521042085, 2.5250501002004007, 2.5370741482965933, 2.5490981963927855, 2.561122244488978, 2.5731462925851702, 2.585170340681363, 2.597194388777555, 2.6092184368737477, 2.62124248496994, 2.6332665330661325, 2.6452905811623246, 2.6573146292585172, 2.6693386773547094, 2.6813627254509016, 2.693386773547094, 2.7054108216432864, 2.717434869739479, 2.729458917835671, 2.741482965931864, 2.753507014028056, 2.7655310621242486, 2.7775551102204408, 2.7895791583166334, 2.8016032064128256, 2.813627254509018, 2.8256513026052104, 2.837675350701403, 2.849699398797595, 2.8617234468937878, 2.87374749498998, 2.8857715430861726, 2.8977955911823647, 2.909819639278557, 2.9218436873747495, 2.9338677354709417, 2.9458917835671343, 2.9579158316633265, 2.969939879759519, 2.9819639278557113, 2.993987975951904, 3.006012024048096, 3.0180360721442887, 3.030060120240481, 3.0420841683366735, 3.0541082164328657, 3.0661322645290583, 3.0781563126252505, 3.090180360721443, 3.1022044088176353, 3.1142284569138274, 3.12625250501002, 3.1382765531062122, 3.150300601202405, 3.162324649298597, 3.1743486973947896, 3.186372745490982, 3.1983967935871744, 3.2104208416833666, 3.2224448897795592, 3.2344689378757514, 3.246492985971944, 3.258517034068136, 3.270541082164329, 3.282565130260521, 3.2945891783567136, 3.306613226452906, 3.3186372745490984, 3.3306613226452906, 3.3426853707414828, 3.3547094188376754, 3.3667334669338675, 3.37875751503006, 3.3907815631262523, 3.402805611222445, 3.414829659318637, 3.4268537074148298, 3.438877755511022, 3.4509018036072145, 3.4629258517034067, 3.4749498997995993, 3.4869739478957915, 3.498997995991984, 3.5110220440881763, 3.523046092184369, 3.535070140280561, 3.5470941883767537, 3.559118236472946, 3.571142284569138, 3.5831663326653307, 3.595190380761523, 3.6072144288577155, 3.6192384769539077, 3.6312625250501003, 3.6432865731462925, 3.655310621242485, 3.6673346693386772, 3.67935871743487, 3.691382765531062, 3.7034068136272547, 3.715430861723447, 3.7274549098196395, 3.7394789579158316, 3.7515030060120242, 3.7635270541082164, 3.775551102204409, 3.787575150300601, 3.7995991983967934, 3.811623246492986, 3.823647294589178, 3.835671342685371, 3.847695390781563, 3.8597194388777556, 3.8717434869739478, 3.8837675350701404, 3.8957915831663326, 3.907815631262525, 3.9198396793587174, 3.93186372745491, 3.943887775551102, 3.9559118236472948, 3.967935871743487, 3.9799599198396796, 3.9919839679358717, 4.004008016032064, 4.0160320641282565, 4.028056112224449, 4.040080160320641, 4.052104208416834, 4.064128256513026, 4.076152304609218, 4.0881763527054105, 4.1002004008016035, 4.112224448897796, 4.124248496993988, 4.13627254509018, 4.148296593186373, 4.160320641282565, 4.1723446893787575, 4.18436873747495, 4.196392785571143, 4.208416833667335, 4.220440881763527, 4.232464929859719, 4.244488977955911, 4.2565130260521045, 4.268537074148297, 4.280561122244489, 4.292585170340681, 4.304609218436874, 4.316633266533066, 4.328657314629258, 4.340681362725451, 4.352705410821644, 4.364729458917836, 4.376753507014028, 4.38877755511022, 4.400801603206413, 4.412825651302605, 4.424849699398798, 4.43687374749499, 4.448897795591182, 4.460921843687375, 4.472945891783567, 4.484969939879759, 4.4969939879759515, 4.509018036072145, 4.521042084168337, 4.533066132264529, 4.545090180360721, 4.557114228456914, 4.569138276553106, 4.5811623246492985, 4.593186372745491, 4.605210420841684, 4.617234468937876, 4.629258517034068, 4.64128256513026, 4.653306613226453, 4.6653306613226455, 4.677354709418838, 4.68937875751503, 4.701402805611222, 4.713426853707415, 4.725450901803607, 4.7374749498997994, 4.749498997995992, 4.761523046092185, 4.773547094188377, 4.785571142284569, 4.797595190380761, 4.809619238476954, 4.8216432865731464, 4.833667334669339, 4.845691382765531, 4.857715430861724, 4.869739478957916, 4.881763527054108, 4.8937875751503, 4.905811623246493, 4.917835671342686, 4.929859719438878, 4.94188376753507, 4.953907815631262, 4.965931863727455, 4.977955911823647, 4.98997995991984, 5.002004008016032, 5.014028056112225, 5.026052104208417, 5.038076152304609, 5.050100200400801, 5.062124248496994, 5.074148296593187, 5.086172344689379, 5.098196392785571, 5.110220440881764, 5.122244488977956, 5.134268537074148, 5.1462925851703405, 5.158316633266533, 5.170340681362726, 5.182364729458918, 5.19438877755511, 5.206412825651302, 5.218436873747495, 5.2304609218436875, 5.24248496993988, 5.254509018036072, 5.266533066132265, 5.278557114228457, 5.290581162324649, 5.302605210420841, 5.3146292585170345, 5.326653306613227, 5.338677354709419, 5.350701402805611, 5.362725450901803, 5.374749498997996, 5.386773547094188, 5.398797595190381, 5.410821643286573, 5.422845691382766, 5.434869739478958, 5.44689378757515, 5.458917835671342, 5.470941883767535, 5.482965931863728, 5.49498997995992, 5.507014028056112, 5.519038076152305, 5.531062124248497, 5.543086172344689, 5.5551102204408815, 5.567134268537074, 5.579158316633267, 5.591182364729459, 5.603206412825651, 5.615230460921843, 5.627254509018036, 5.6392785571142285, 5.651302605210421, 5.663326653306613, 5.675350701402806, 5.687374749498998, 5.69939879759519, 5.7114228456913825, 5.7234468937875755, 5.735470941883768, 5.74749498997996, 5.759519038076152, 5.771543086172345, 5.783567134268537, 5.7955911823647295, 5.807615230460922, 5.819639278557114, 5.831663326653307, 5.843687374749499, 5.855711422845691, 5.867735470941883, 5.8797595190380765, 5.891783567134269, 5.903807615230461, 5.915831663326653, 5.927855711422846, 5.939879759519038, 5.95190380761523, 5.963927855711423, 5.975951903807616, 5.987975951903808, 6.0])
+              .range(['#ffffccff', '#ffffccff', '#ffffccff', '#ffffccff', '#ffffccff', '#ffffccff', '#ffffccff', '#ffffccff', '#ffffccff', '#ffffccff', '#ffffccff', '#ffffccff', '#ffffccff', '#ffffccff', '#ffffccff', '#ffffccff', '#ffffccff', '#ffffccff', '#ffffccff', '#ffffccff', '#ffffccff', '#ffffccff', '#ffffccff', '#ffffccff', '#ffffccff', '#ffffccff', '#ffffccff', '#ffffccff', '#ffffccff', '#ffffccff', '#ffffccff', '#ffffccff', '#ffffccff', '#ffffccff', '#ffffccff', '#ffffccff', '#ffffccff', '#ffffccff', '#ffffccff', '#ffffccff', '#ffffccff', '#ffffccff', '#ffffccff', '#ffffccff', '#ffffccff', '#ffffccff', '#ffffccff', '#ffffccff', '#ffffccff', '#ffffccff', '#ffffccff', '#ffffccff', '#ffffccff', '#ffffccff', '#ffffccff', '#ffffccff', '#ffffccff', '#ffffccff', '#ffffccff', '#ffffccff', '#ffffccff', '#ffffccff', '#ffffccff', '#ffffccff', '#ffffccff', '#ffffccff', '#ffffccff', '#ffffccff', '#ffffccff', '#ffffccff', '#ffffccff', '#ffffccff', '#ffffccff', '#ffffccff', '#ffffccff', '#ffffccff', '#ffffccff', '#ffffccff', '#ffffccff', '#ffffccff', '#ffffccff', '#ffffccff', '#ffffccff', '#ffffccff', '#d9f0a3ff', '#d9f0a3ff', '#d9f0a3ff', '#d9f0a3ff', '#d9f0a3ff', '#d9f0a3ff', '#d9f0a3ff', '#d9f0a3ff', '#d9f0a3ff', '#d9f0a3ff', '#d9f0a3ff', '#d9f0a3ff', '#d9f0a3ff', '#d9f0a3ff', '#d9f0a3ff', '#d9f0a3ff', '#d9f0a3ff', '#d9f0a3ff', '#d9f0a3ff', '#d9f0a3ff', '#d9f0a3ff', '#d9f0a3ff', '#d9f0a3ff', '#d9f0a3ff', '#d9f0a3ff', '#d9f0a3ff', '#d9f0a3ff', '#d9f0a3ff', '#d9f0a3ff', '#d9f0a3ff', '#d9f0a3ff', '#d9f0a3ff', '#d9f0a3ff', '#d9f0a3ff', '#d9f0a3ff', '#d9f0a3ff', '#d9f0a3ff', '#d9f0a3ff', '#d9f0a3ff', '#d9f0a3ff', '#d9f0a3ff', '#d9f0a3ff', '#d9f0a3ff', '#d9f0a3ff', '#d9f0a3ff', '#d9f0a3ff', '#d9f0a3ff', '#d9f0a3ff', '#d9f0a3ff', '#d9f0a3ff', '#d9f0a3ff', '#d9f0a3ff', '#d9f0a3ff', '#d9f0a3ff', '#d9f0a3ff', '#d9f0a3ff', '#d9f0a3ff', '#d9f0a3ff', '#d9f0a3ff', '#d9f0a3ff', '#d9f0a3ff', '#d9f0a3ff', '#d9f0a3ff', '#d9f0a3ff', '#d9f0a3ff', '#d9f0a3ff', '#d9f0a3ff', '#d9f0a3ff', '#d9f0a3ff', '#d9f0a3ff', '#d9f0a3ff', '#d9f0a3ff', '#d9f0a3ff', '#d9f0a3ff', '#d9f0a3ff', '#d9f0a3ff', '#d9f0a3ff', '#d9f0a3ff', '#d9f0a3ff', '#d9f0a3ff', '#d9f0a3ff', '#d9f0a3ff', '#d9f0a3ff', '#addd8eff', '#addd8eff', '#addd8eff', '#addd8eff', '#addd8eff', '#addd8eff', '#addd8eff', '#addd8eff', '#addd8eff', '#addd8eff', '#addd8eff', '#addd8eff', '#addd8eff', '#addd8eff', '#addd8eff', '#addd8eff', '#addd8eff', '#addd8eff', '#addd8eff', '#addd8eff', '#addd8eff', '#addd8eff', '#addd8eff', '#addd8eff', '#addd8eff', '#addd8eff', '#addd8eff', '#addd8eff', '#addd8eff', '#addd8eff', '#addd8eff', '#addd8eff', '#addd8eff', '#addd8eff', '#addd8eff', '#addd8eff', '#addd8eff', '#addd8eff', '#addd8eff', '#addd8eff', '#addd8eff', '#addd8eff', '#addd8eff', '#addd8eff', '#addd8eff', '#addd8eff', '#addd8eff', '#addd8eff', '#addd8eff', '#addd8eff', '#addd8eff', '#addd8eff', '#addd8eff', '#addd8eff', '#addd8eff', '#addd8eff', '#addd8eff', '#addd8eff', '#addd8eff', '#addd8eff', '#addd8eff', '#addd8eff', '#addd8eff', '#addd8eff', '#addd8eff', '#addd8eff', '#addd8eff', '#addd8eff', '#addd8eff', '#addd8eff', '#addd8eff', '#addd8eff', '#addd8eff', '#addd8eff', '#addd8eff', '#addd8eff', '#addd8eff', '#addd8eff', '#addd8eff', '#addd8eff', '#addd8eff', '#addd8eff', '#addd8eff', '#78c679ff', '#78c679ff', '#78c679ff', '#78c679ff', '#78c679ff', '#78c679ff', '#78c679ff', '#78c679ff', '#78c679ff', '#78c679ff', '#78c679ff', '#78c679ff', '#78c679ff', '#78c679ff', '#78c679ff', '#78c679ff', '#78c679ff', '#78c679ff', '#78c679ff', '#78c679ff', '#78c679ff', '#78c679ff', '#78c679ff', '#78c679ff', '#78c679ff', '#78c679ff', '#78c679ff', '#78c679ff', '#78c679ff', '#78c679ff', '#78c679ff', '#78c679ff', '#78c679ff', '#78c679ff', '#78c679ff', '#78c679ff', '#78c679ff', '#78c679ff', '#78c679ff', '#78c679ff', '#78c679ff', '#78c679ff', '#78c679ff', '#78c679ff', '#78c679ff', '#78c679ff', '#78c679ff', '#78c679ff', '#78c679ff', '#78c679ff', '#78c679ff', '#78c679ff', '#78c679ff', '#78c679ff', '#78c679ff', '#78c679ff', '#78c679ff', '#78c679ff', '#78c679ff', '#78c679ff', '#78c679ff', '#78c679ff', '#78c679ff', '#78c679ff', '#78c679ff', '#78c679ff', '#78c679ff', '#78c679ff', '#78c679ff', '#78c679ff', '#78c679ff', '#78c679ff', '#78c679ff', '#78c679ff', '#78c679ff', '#78c679ff', '#78c679ff', '#78c679ff', '#78c679ff', '#78c679ff', '#78c679ff', '#78c679ff', '#78c679ff', '#31a354ff', '#31a354ff', '#31a354ff', '#31a354ff', '#31a354ff', '#31a354ff', '#31a354ff', '#31a354ff', '#31a354ff', '#31a354ff', '#31a354ff', '#31a354ff', '#31a354ff', '#31a354ff', '#31a354ff', '#31a354ff', '#31a354ff', '#31a354ff', '#31a354ff', '#31a354ff', '#31a354ff', '#31a354ff', '#31a354ff', '#31a354ff', '#31a354ff', '#31a354ff', '#31a354ff', '#31a354ff', '#31a354ff', '#31a354ff', '#31a354ff', '#31a354ff', '#31a354ff', '#31a354ff', '#31a354ff', '#31a354ff', '#31a354ff', '#31a354ff', '#31a354ff', '#31a354ff', '#31a354ff', '#31a354ff', '#31a354ff', '#31a354ff', '#31a354ff', '#31a354ff', '#31a354ff', '#31a354ff', '#31a354ff', '#31a354ff', '#31a354ff', '#31a354ff', '#31a354ff', '#31a354ff', '#31a354ff', '#31a354ff', '#31a354ff', '#31a354ff', '#31a354ff', '#31a354ff', '#31a354ff', '#31a354ff', '#31a354ff', '#31a354ff', '#31a354ff', '#31a354ff', '#31a354ff', '#31a354ff', '#31a354ff', '#31a354ff', '#31a354ff', '#31a354ff', '#31a354ff', '#31a354ff', '#31a354ff', '#31a354ff', '#31a354ff', '#31a354ff', '#31a354ff', '#31a354ff', '#31a354ff', '#31a354ff', '#31a354ff', '#006837ff', '#006837ff', '#006837ff', '#006837ff', '#006837ff', '#006837ff', '#006837ff', '#006837ff', '#006837ff', '#006837ff', '#006837ff', '#006837ff', '#006837ff', '#006837ff', '#006837ff', '#006837ff', '#006837ff', '#006837ff', '#006837ff', '#006837ff', '#006837ff', '#006837ff', '#006837ff', '#006837ff', '#006837ff', '#006837ff', '#006837ff', '#006837ff', '#006837ff', '#006837ff', '#006837ff', '#006837ff', '#006837ff', '#006837ff', '#006837ff', '#006837ff', '#006837ff', '#006837ff', '#006837ff', '#006837ff', '#006837ff', '#006837ff', '#006837ff', '#006837ff', '#006837ff', '#006837ff', '#006837ff', '#006837ff', '#006837ff', '#006837ff', '#006837ff', '#006837ff', '#006837ff', '#006837ff', '#006837ff', '#006837ff', '#006837ff', '#006837ff', '#006837ff', '#006837ff', '#006837ff', '#006837ff', '#006837ff', '#006837ff', '#006837ff', '#006837ff', '#006837ff', '#006837ff', '#006837ff', '#006837ff', '#006837ff', '#006837ff', '#006837ff', '#006837ff', '#006837ff', '#006837ff', '#006837ff', '#006837ff', '#006837ff', '#006837ff', '#006837ff', '#006837ff', '#006837ff', '#006837ff']);
+    
+
+    color_map_f834c869c2efed0650b96d2e8bbc47cb.x = d3.scale.linear()
+              .domain([0.0, 6.0])
+              .range([0, 450 - 50]);
+
+    color_map_f834c869c2efed0650b96d2e8bbc47cb.legend = L.control({position: 'topright'});
+    color_map_f834c869c2efed0650b96d2e8bbc47cb.legend.onAdd = function (map) {var div = L.DomUtil.create('div', 'legend'); return div};
+    color_map_f834c869c2efed0650b96d2e8bbc47cb.legend.addTo(map_a3520191679fc65bbe1e73b0b06ee88e);
+
+    color_map_f834c869c2efed0650b96d2e8bbc47cb.xAxis = d3.svg.axis()
+        .scale(color_map_f834c869c2efed0650b96d2e8bbc47cb.x)
+        .orient("top")
+        .tickSize(1)
+        .tickValues([0.0, 1.0, 2.0, 3.0, 4.0, 5.0, 6.0]);
+
+    color_map_f834c869c2efed0650b96d2e8bbc47cb.svg = d3.select(".legend.leaflet-control").append("svg")
+        .attr("id", 'legend')
+        .attr("width", 450)
+        .attr("height", 40);
+
+    color_map_f834c869c2efed0650b96d2e8bbc47cb.g = color_map_f834c869c2efed0650b96d2e8bbc47cb.svg.append("g")
+        .attr("class", "key")
+        .attr("transform", "translate(25,16)");
+
+    color_map_f834c869c2efed0650b96d2e8bbc47cb.g.selectAll("rect")
+        .data(color_map_f834c869c2efed0650b96d2e8bbc47cb.color.range().map(function(d, i) {
+          return {
+            x0: i ? color_map_f834c869c2efed0650b96d2e8bbc47cb.x(color_map_f834c869c2efed0650b96d2e8bbc47cb.color.domain()[i - 1]) : color_map_f834c869c2efed0650b96d2e8bbc47cb.x.range()[0],
+            x1: i < color_map_f834c869c2efed0650b96d2e8bbc47cb.color.domain().length ? color_map_f834c869c2efed0650b96d2e8bbc47cb.x(color_map_f834c869c2efed0650b96d2e8bbc47cb.color.domain()[i]) : color_map_f834c869c2efed0650b96d2e8bbc47cb.x.range()[1],
+            z: d
+          };
+        }))
+      .enter().append("rect")
+        .attr("height", 40 - 30)
+        .attr("x", function(d) { return d.x0; })
+        .attr("width", function(d) { return d.x1 - d.x0; })
+        .style("fill", function(d) { return d.z; });
+
+    color_map_f834c869c2efed0650b96d2e8bbc47cb.g.call(color_map_f834c869c2efed0650b96d2e8bbc47cb.xAxis).append("text")
+        .attr("class", "caption")
+        .attr("y", 21)
+        .text("Cluster");
+    
+            choropleth_84228ea78733172fe79dda3663fb4061.addTo(map_a3520191679fc65bbe1e73b0b06ee88e);
+        
+    
+            var marker_cluster_33194577e87f8f5e31cf58b894617ce5 = L.markerClusterGroup(
+                {}
+            );
+        
+    
+            var marker_0cd77f82d2c7d62658529117019b735a = L.marker(
+                [-6.3705339, 106.8235482],
+                {}
+            ).addTo(marker_cluster_33194577e87f8f5e31cf58b894617ce5);
+        
+    
+            var icon_87463f5ca86c75740aa67de05ec7f535 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "black", "prefix": "glyphicon"}
+            );
+            marker_0cd77f82d2c7d62658529117019b735a.setIcon(icon_87463f5ca86c75740aa67de05ec7f535);
+        
+    
+        var popup_8f3111c950052bbb62ed948b0dca981b = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_d8e35d81d667e084dfa85488591a6bf0 = $(`<div id="html_d8e35d81d667e084dfa85488591a6bf0" style="width: 100.0%; height: 100.0%;">Tempat: Dalam R Rapat Upatik GSG<br>Cluster: 4</div>`)[0];
+                popup_8f3111c950052bbb62ed948b0dca981b.setContent(html_d8e35d81d667e084dfa85488591a6bf0);
+            
+        
+
+        marker_0cd77f82d2c7d62658529117019b735a.bindPopup(popup_8f3111c950052bbb62ed948b0dca981b)
+        ;
+
+        
+    
+    
+            var marker_c5e1251feaa70adb70c69e18f1a50b34 = L.marker(
+                [-6.3705339, 106.8235482],
+                {}
+            ).addTo(marker_cluster_33194577e87f8f5e31cf58b894617ce5);
+        
+    
+            var icon_545636fc68328f4b72e3071ed82be5ae = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "pink", "prefix": "glyphicon"}
+            );
+            marker_c5e1251feaa70adb70c69e18f1a50b34.setIcon(icon_545636fc68328f4b72e3071ed82be5ae);
+        
+    
+        var popup_217ff79ff9f4ae8210881dd760fa589f = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_fd922a1a69962c9b0b4b41b41dfabd67 = $(`<div id="html_fd922a1a69962c9b0b4b41b41dfabd67" style="width: 100.0%; height: 100.0%;">Tempat: Depan R Rapat Upatik 1M GSG<br>Cluster: 2</div>`)[0];
+                popup_217ff79ff9f4ae8210881dd760fa589f.setContent(html_fd922a1a69962c9b0b4b41b41dfabd67);
+            
+        
+
+        marker_c5e1251feaa70adb70c69e18f1a50b34.bindPopup(popup_217ff79ff9f4ae8210881dd760fa589f)
+        ;
+
+        
+    
+    
+            var marker_c404b4437f7a35e41007b4d9d5870015 = L.marker(
+                [-6.3705339, 106.8235482],
+                {}
+            ).addTo(marker_cluster_33194577e87f8f5e31cf58b894617ce5);
+        
+    
+            var icon_87f0b6e4bf087e5ee8087b33b19fdc70 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "purple", "prefix": "glyphicon"}
+            );
+            marker_c404b4437f7a35e41007b4d9d5870015.setIcon(icon_87f0b6e4bf087e5ee8087b33b19fdc70);
+        
+    
+        var popup_d1ee728cde504fc49a5b573b7cf9f662 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_47becec5cf3261f175ab192c3f39a390 = $(`<div id="html_47becec5cf3261f175ab192c3f39a390" style="width: 100.0%; height: 100.0%;">Tempat: Depan R Rapat Upatik 3M GSG<br>Cluster: 3</div>`)[0];
+                popup_d1ee728cde504fc49a5b573b7cf9f662.setContent(html_47becec5cf3261f175ab192c3f39a390);
+            
+        
+
+        marker_c404b4437f7a35e41007b4d9d5870015.bindPopup(popup_d1ee728cde504fc49a5b573b7cf9f662)
+        ;
+
+        
+    
+    
+            var marker_9dff1d8d16705fadbd657d4eeebafd80 = L.marker(
+                [-6.3705339, 106.8235482],
+                {}
+            ).addTo(marker_cluster_33194577e87f8f5e31cf58b894617ce5);
+        
+    
+            var icon_7111e4d00dd1a136613074101c59db60 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "purple", "prefix": "glyphicon"}
+            );
+            marker_9dff1d8d16705fadbd657d4eeebafd80.setIcon(icon_7111e4d00dd1a136613074101c59db60);
+        
+    
+        var popup_c72efee6eab07e5002a065593f2b5740 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_a4dcbb491327b79241c1541b87fbb852 = $(`<div id="html_a4dcbb491327b79241c1541b87fbb852" style="width: 100.0%; height: 100.0%;">Tempat: Depan R Rapat Upatik 5M GSG<br>Cluster: 3</div>`)[0];
+                popup_c72efee6eab07e5002a065593f2b5740.setContent(html_a4dcbb491327b79241c1541b87fbb852);
+            
+        
+
+        marker_9dff1d8d16705fadbd657d4eeebafd80.bindPopup(popup_c72efee6eab07e5002a065593f2b5740)
+        ;
+
+        
+    
+    
+            var marker_0641b3ba9dbe0412111fb25ec5114e5e = L.marker(
+                [-6.3705339, 106.8235482],
+                {}
+            ).addTo(marker_cluster_33194577e87f8f5e31cf58b894617ce5);
+        
+    
+            var icon_53894e6771cf23faf24f0facd9c37a1c = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "purple", "prefix": "glyphicon"}
+            );
+            marker_0641b3ba9dbe0412111fb25ec5114e5e.setIcon(icon_53894e6771cf23faf24f0facd9c37a1c);
+        
+    
+        var popup_a35a4f427cfdb885d5f4e08f75aad0fa = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_ed2e087c297303e4fa444cb8b4847834 = $(`<div id="html_ed2e087c297303e4fa444cb8b4847834" style="width: 100.0%; height: 100.0%;">Tempat: Depan Loket Upatik 1M GSG<br>Cluster: 3</div>`)[0];
+                popup_a35a4f427cfdb885d5f4e08f75aad0fa.setContent(html_ed2e087c297303e4fa444cb8b4847834);
+            
+        
+
+        marker_0641b3ba9dbe0412111fb25ec5114e5e.bindPopup(popup_a35a4f427cfdb885d5f4e08f75aad0fa)
+        ;
+
+        
+    
+    
+            var marker_69c3e62b15f1cae98bbe9447e1402928 = L.marker(
+                [-6.3705339, 106.8235482],
+                {}
+            ).addTo(marker_cluster_33194577e87f8f5e31cf58b894617ce5);
+        
+    
+            var icon_9194ac29b3ad450cf056f7c186af7524 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "purple", "prefix": "glyphicon"}
+            );
+            marker_69c3e62b15f1cae98bbe9447e1402928.setIcon(icon_9194ac29b3ad450cf056f7c186af7524);
+        
+    
+        var popup_2505f1bb0d987e8147768072d631a2d4 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_4f3ca1c754ec3bd0bbb894646e5db64e = $(`<div id="html_4f3ca1c754ec3bd0bbb894646e5db64e" style="width: 100.0%; height: 100.0%;">Tempat: Depan Loket Upatik 3M GSG<br>Cluster: 3</div>`)[0];
+                popup_2505f1bb0d987e8147768072d631a2d4.setContent(html_4f3ca1c754ec3bd0bbb894646e5db64e);
+            
+        
+
+        marker_69c3e62b15f1cae98bbe9447e1402928.bindPopup(popup_2505f1bb0d987e8147768072d631a2d4)
+        ;
+
+        
+    
+    
+            var marker_f0e9f5a4a28f0308c7f549a987a2c896 = L.marker(
+                [-6.3705339, 106.8235482],
+                {}
+            ).addTo(marker_cluster_33194577e87f8f5e31cf58b894617ce5);
+        
+    
+            var icon_7ab1dba3268685a9f0d7bba0c324fdbd = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "gray", "prefix": "glyphicon"}
+            );
+            marker_f0e9f5a4a28f0308c7f549a987a2c896.setIcon(icon_7ab1dba3268685a9f0d7bba0c324fdbd);
+        
+    
+        var popup_c083a922f964cfbbe3f37ebcbc3d468b = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_7ba90bd94a569bcd584a258f946ffb90 = $(`<div id="html_7ba90bd94a569bcd584a258f946ffb90" style="width: 100.0%; height: 100.0%;">Tempat: Depan Loket Upatik 5M GSG<br>Cluster: 5</div>`)[0];
+                popup_c083a922f964cfbbe3f37ebcbc3d468b.setContent(html_7ba90bd94a569bcd584a258f946ffb90);
+            
+        
+
+        marker_f0e9f5a4a28f0308c7f549a987a2c896.bindPopup(popup_c083a922f964cfbbe3f37ebcbc3d468b)
+        ;
+
+        
+    
+    
+            var marker_a4f5fe534a9cfd80b9c403c219872954 = L.marker(
+                [-6.3705339, 106.8235482],
+                {}
+            ).addTo(marker_cluster_33194577e87f8f5e31cf58b894617ce5);
+        
+    
+            var icon_bc4b1cb8e996be4417fd8881120823d9 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "blue", "prefix": "glyphicon"}
+            );
+            marker_a4f5fe534a9cfd80b9c403c219872954.setIcon(icon_bc4b1cb8e996be4417fd8881120823d9);
+        
+    
+        var popup_408980f796ce5a821d4f6f452be9d4ba = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_8d2c4ac69029648be15418e7763f09e6 = $(`<div id="html_8d2c4ac69029648be15418e7763f09e6" style="width: 100.0%; height: 100.0%;">Tempat: Depan R Ikapunija<br>Cluster: 0</div>`)[0];
+                popup_408980f796ce5a821d4f6f452be9d4ba.setContent(html_8d2c4ac69029648be15418e7763f09e6);
+            
+        
+
+        marker_a4f5fe534a9cfd80b9c403c219872954.bindPopup(popup_408980f796ce5a821d4f6f452be9d4ba)
+        ;
+
+        
+    
+    
+            var marker_aae8d9dee2645ea8b5cc5876094e49fe = L.marker(
+                [-6.3705339, 106.8235482],
+                {}
+            ).addTo(marker_cluster_33194577e87f8f5e31cf58b894617ce5);
+        
+    
+            var icon_9d3268eb30fb8b0babe752acabc99856 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "blue", "prefix": "glyphicon"}
+            );
+            marker_aae8d9dee2645ea8b5cc5876094e49fe.setIcon(icon_9d3268eb30fb8b0babe752acabc99856);
+        
+    
+        var popup_1008233aa9f44c091de41ba3a729d3a0 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_77fcffcded76b070ac85971297b74a0d = $(`<div id="html_77fcffcded76b070ac85971297b74a0d" style="width: 100.0%; height: 100.0%;">Tempat: Dalam Aula GSG<br>Cluster: 0</div>`)[0];
+                popup_1008233aa9f44c091de41ba3a729d3a0.setContent(html_77fcffcded76b070ac85971297b74a0d);
+            
+        
+
+        marker_aae8d9dee2645ea8b5cc5876094e49fe.bindPopup(popup_1008233aa9f44c091de41ba3a729d3a0)
+        ;
+
+        
+    
+    
+            var marker_d42170244624147fee1ea5b168bad192 = L.marker(
+                [-6.3705339, 106.8235482],
+                {}
+            ).addTo(marker_cluster_33194577e87f8f5e31cf58b894617ce5);
+        
+    
+            var icon_be96ad400f1a818c96c794a1f2a1ea47 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "purple", "prefix": "glyphicon"}
+            );
+            marker_d42170244624147fee1ea5b168bad192.setIcon(icon_be96ad400f1a818c96c794a1f2a1ea47);
+        
+    
+        var popup_cae1e2fa63a0df84e28d8cbd6386b814 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_3029fd5393bea1f86e23acd66c79c4fd = $(`<div id="html_3029fd5393bea1f86e23acd66c79c4fd" style="width: 100.0%; height: 100.0%;">Tempat: Depan Mushollah 1M GSG<br>Cluster: 3</div>`)[0];
+                popup_cae1e2fa63a0df84e28d8cbd6386b814.setContent(html_3029fd5393bea1f86e23acd66c79c4fd);
+            
+        
+
+        marker_d42170244624147fee1ea5b168bad192.bindPopup(popup_cae1e2fa63a0df84e28d8cbd6386b814)
+        ;
+
+        
+    
+    
+            var marker_568e0e91e9aa26dc9b500e5599cb980f = L.marker(
+                [-6.3705339, 106.8235482],
+                {}
+            ).addTo(marker_cluster_33194577e87f8f5e31cf58b894617ce5);
+        
+    
+            var icon_e516228ca0b8fe2b6b6c1075f5217033 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "purple", "prefix": "glyphicon"}
+            );
+            marker_568e0e91e9aa26dc9b500e5599cb980f.setIcon(icon_e516228ca0b8fe2b6b6c1075f5217033);
+        
+    
+        var popup_5425942ea88aeffec90c378729689c4c = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_2d95ea4fcd6cc00be361d235f4ecdf29 = $(`<div id="html_2d95ea4fcd6cc00be361d235f4ecdf29" style="width: 100.0%; height: 100.0%;">Tempat: Depan Mushollah 3M GSG<br>Cluster: 3</div>`)[0];
+                popup_5425942ea88aeffec90c378729689c4c.setContent(html_2d95ea4fcd6cc00be361d235f4ecdf29);
+            
+        
+
+        marker_568e0e91e9aa26dc9b500e5599cb980f.bindPopup(popup_5425942ea88aeffec90c378729689c4c)
+        ;
+
+        
+    
+    
+            var marker_cd0eed2aeefc8aa071cb619d7b6bb9ed = L.marker(
+                [-6.3705339, 106.8235482],
+                {}
+            ).addTo(marker_cluster_33194577e87f8f5e31cf58b894617ce5);
+        
+    
+            var icon_a4099702e355c2ad98d801285718df14 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "pink", "prefix": "glyphicon"}
+            );
+            marker_cd0eed2aeefc8aa071cb619d7b6bb9ed.setIcon(icon_a4099702e355c2ad98d801285718df14);
+        
+    
+        var popup_4c18d803d1fbca7583239356cbd34f93 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_65998eb62cc9ba6b6caf3401fea17d2d = $(`<div id="html_65998eb62cc9ba6b6caf3401fea17d2d" style="width: 100.0%; height: 100.0%;">Tempat: Dalam R 211 GSG<br>Cluster: 2</div>`)[0];
+                popup_4c18d803d1fbca7583239356cbd34f93.setContent(html_65998eb62cc9ba6b6caf3401fea17d2d);
+            
+        
+
+        marker_cd0eed2aeefc8aa071cb619d7b6bb9ed.bindPopup(popup_4c18d803d1fbca7583239356cbd34f93)
+        ;
+
+        
+    
+    
+            var marker_3d1abf87309b1824d7884e915a2ac41b = L.marker(
+                [-6.3705339, 106.8235482],
+                {}
+            ).addTo(marker_cluster_33194577e87f8f5e31cf58b894617ce5);
+        
+    
+            var icon_8575258996dc2ba7c0a7a411caf65a30 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "pink", "prefix": "glyphicon"}
+            );
+            marker_3d1abf87309b1824d7884e915a2ac41b.setIcon(icon_8575258996dc2ba7c0a7a411caf65a30);
+        
+    
+        var popup_9b6ee1f350085db403f9d808a2d99a38 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_6c91fdd339bfcf8abcd5c91f530b50a6 = $(`<div id="html_6c91fdd339bfcf8abcd5c91f530b50a6" style="width: 100.0%; height: 100.0%;">Tempat: Dalam R 212 GSG<br>Cluster: 2</div>`)[0];
+                popup_9b6ee1f350085db403f9d808a2d99a38.setContent(html_6c91fdd339bfcf8abcd5c91f530b50a6);
+            
+        
+
+        marker_3d1abf87309b1824d7884e915a2ac41b.bindPopup(popup_9b6ee1f350085db403f9d808a2d99a38)
+        ;
+
+        
+    
+    
+            var marker_f26c3e1c9eff44c652cde7998a0cef35 = L.marker(
+                [-6.3705339, 106.8235482],
+                {}
+            ).addTo(marker_cluster_33194577e87f8f5e31cf58b894617ce5);
+        
+    
+            var icon_d7debe31f98c04be2510d14705dbda3d = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "red", "prefix": "glyphicon"}
+            );
+            marker_f26c3e1c9eff44c652cde7998a0cef35.setIcon(icon_d7debe31f98c04be2510d14705dbda3d);
+        
+    
+        var popup_16836321217ca875a4178a495d5499be = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_fb4c7fea3855fe484267c5b6996a088c = $(`<div id="html_fb4c7fea3855fe484267c5b6996a088c" style="width: 100.0%; height: 100.0%;">Tempat: Depan R 208 GSG<br>Cluster: 1</div>`)[0];
+                popup_16836321217ca875a4178a495d5499be.setContent(html_fb4c7fea3855fe484267c5b6996a088c);
+            
+        
+
+        marker_f26c3e1c9eff44c652cde7998a0cef35.bindPopup(popup_16836321217ca875a4178a495d5499be)
+        ;
+
+        
+    
+    
+            var marker_b74fe879134ac42285264abd0235549b = L.marker(
+                [-6.3705339, 106.8235482],
+                {}
+            ).addTo(marker_cluster_33194577e87f8f5e31cf58b894617ce5);
+        
+    
+            var icon_ddd705df43fe892e5e8113928226ca0a = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "red", "prefix": "glyphicon"}
+            );
+            marker_b74fe879134ac42285264abd0235549b.setIcon(icon_ddd705df43fe892e5e8113928226ca0a);
+        
+    
+        var popup_ca5516c6a76cbd6d83bb2c3a0abea91a = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_19ab072bd9a59755b81edfccf10960e8 = $(`<div id="html_19ab072bd9a59755b81edfccf10960e8" style="width: 100.0%; height: 100.0%;">Tempat: Depan R Lab 1M GSG<br>Cluster: 1</div>`)[0];
+                popup_ca5516c6a76cbd6d83bb2c3a0abea91a.setContent(html_19ab072bd9a59755b81edfccf10960e8);
+            
+        
+
+        marker_b74fe879134ac42285264abd0235549b.bindPopup(popup_ca5516c6a76cbd6d83bb2c3a0abea91a)
+        ;
+
+        
+    
+    
+            var marker_1d363866a24d02241e2c0a69ab4977f8 = L.marker(
+                [-6.3705339, 106.8235482],
+                {}
+            ).addTo(marker_cluster_33194577e87f8f5e31cf58b894617ce5);
+        
+    
+            var icon_5924de1dd9564f7ec8161ed159606c0a = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "pink", "prefix": "glyphicon"}
+            );
+            marker_1d363866a24d02241e2c0a69ab4977f8.setIcon(icon_5924de1dd9564f7ec8161ed159606c0a);
+        
+    
+        var popup_34b159b2b2847912a8f04b4bcc6d86a7 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_593e75b0b0ffa111e1de00af4212daf8 = $(`<div id="html_593e75b0b0ffa111e1de00af4212daf8" style="width: 100.0%; height: 100.0%;">Tempat: Depan R Lab 3M GSG<br>Cluster: 2</div>`)[0];
+                popup_34b159b2b2847912a8f04b4bcc6d86a7.setContent(html_593e75b0b0ffa111e1de00af4212daf8);
+            
+        
+
+        marker_1d363866a24d02241e2c0a69ab4977f8.bindPopup(popup_34b159b2b2847912a8f04b4bcc6d86a7)
+        ;
+
+        
+    
+    
+            var marker_4f7eb0a714767bc11845d63e1640edd5 = L.marker(
+                [-6.3705339, 106.8235482],
+                {}
+            ).addTo(marker_cluster_33194577e87f8f5e31cf58b894617ce5);
+        
+    
+            var icon_970873dd97e62525d6a2bc6b1503d6ed = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "red", "prefix": "glyphicon"}
+            );
+            marker_4f7eb0a714767bc11845d63e1640edd5.setIcon(icon_970873dd97e62525d6a2bc6b1503d6ed);
+        
+    
+        var popup_9a8be168b5df44e3ef3d0fdd502859b9 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_d5fba77fac92932cedc8cec7cc38b174 = $(`<div id="html_d5fba77fac92932cedc8cec7cc38b174" style="width: 100.0%; height: 100.0%;">Tempat: Depan R Lab 5M GSG<br>Cluster: 1</div>`)[0];
+                popup_9a8be168b5df44e3ef3d0fdd502859b9.setContent(html_d5fba77fac92932cedc8cec7cc38b174);
+            
+        
+
+        marker_4f7eb0a714767bc11845d63e1640edd5.bindPopup(popup_9a8be168b5df44e3ef3d0fdd502859b9)
+        ;
+
+        
+    
+    
+            var marker_23f7fb52135d5053a9622e552d5c63af = L.marker(
+                [-6.3725189, 106.8238803],
+                {}
+            ).addTo(marker_cluster_33194577e87f8f5e31cf58b894617ce5);
+        
+    
+            var icon_c0e1671f3964ca3ba06df062c1f0c8a3 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "gray", "prefix": "glyphicon"}
+            );
+            marker_23f7fb52135d5053a9622e552d5c63af.setIcon(icon_c0e1671f3964ca3ba06df062c1f0c8a3);
+        
+    
+        var popup_37771ae736f4d2f1c78d0cde926a8beb = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_2aa50c7418bad2e4e73a96e010656616 = $(`<div id="html_2aa50c7418bad2e4e73a96e010656616" style="width: 100.0%; height: 100.0%;">Tempat: Depan Admin JTIK Gd AA<br>Cluster: 5</div>`)[0];
+                popup_37771ae736f4d2f1c78d0cde926a8beb.setContent(html_2aa50c7418bad2e4e73a96e010656616);
+            
+        
+
+        marker_23f7fb52135d5053a9622e552d5c63af.bindPopup(popup_37771ae736f4d2f1c78d0cde926a8beb)
+        ;
+
+        
+    
+    
+            var marker_2c749c2086bf4ca7f46c3ffaa3382b6e = L.marker(
+                [-6.3725189, 106.8238803],
+                {}
+            ).addTo(marker_cluster_33194577e87f8f5e31cf58b894617ce5);
+        
+    
+            var icon_3b8635b01f21d58b3b839cd41b61daf9 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "blue", "prefix": "glyphicon"}
+            );
+            marker_2c749c2086bf4ca7f46c3ffaa3382b6e.setIcon(icon_3b8635b01f21d58b3b839cd41b61daf9);
+        
+    
+        var popup_8ba53fa2761df270d1b7137f2d34bf01 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_ce25ac567c7eb5c190dc68d28b8bc50b = $(`<div id="html_ce25ac567c7eb5c190dc68d28b8bc50b" style="width: 100.0%; height: 100.0%;">Tempat: Depan R Server Gd AA<br>Cluster: 0</div>`)[0];
+                popup_8ba53fa2761df270d1b7137f2d34bf01.setContent(html_ce25ac567c7eb5c190dc68d28b8bc50b);
+            
+        
+
+        marker_2c749c2086bf4ca7f46c3ffaa3382b6e.bindPopup(popup_8ba53fa2761df270d1b7137f2d34bf01)
+        ;
+
+        
+    
+    
+            var marker_a71652e2004d631b695a04c102c1acd1 = L.marker(
+                [-6.3725189, 106.8238803],
+                {}
+            ).addTo(marker_cluster_33194577e87f8f5e31cf58b894617ce5);
+        
+    
+            var icon_5ecad836a0d1728a8d94e392bfb86893 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "green", "prefix": "glyphicon"}
+            );
+            marker_a71652e2004d631b695a04c102c1acd1.setIcon(icon_5ecad836a0d1728a8d94e392bfb86893);
+        
+    
+        var popup_fc2d4590a2888c454c2d031005dc1465 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_143220108add012747be29848edebf05 = $(`<div id="html_143220108add012747be29848edebf05" style="width: 100.0%; height: 100.0%;">Tempat: Dalam R 303 Gd AA<br>Cluster: 6</div>`)[0];
+                popup_fc2d4590a2888c454c2d031005dc1465.setContent(html_143220108add012747be29848edebf05);
+            
+        
+
+        marker_a71652e2004d631b695a04c102c1acd1.bindPopup(popup_fc2d4590a2888c454c2d031005dc1465)
+        ;
+
+        
+    
+    
+            var marker_feb80bd0e16af923122854bac3310d71 = L.marker(
+                [-6.3725189, 106.8238803],
+                {}
+            ).addTo(marker_cluster_33194577e87f8f5e31cf58b894617ce5);
+        
+    
+            var icon_ca6009f16db4b9772b833dc19413b533 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "green", "prefix": "glyphicon"}
+            );
+            marker_feb80bd0e16af923122854bac3310d71.setIcon(icon_ca6009f16db4b9772b833dc19413b533);
+        
+    
+        var popup_ae0a37714788fbdcfbf67dfc14661c50 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_697cc3fab2b2aed1d5fb26897b50472d = $(`<div id="html_697cc3fab2b2aed1d5fb26897b50472d" style="width: 100.0%; height: 100.0%;">Tempat: Depan R 304 Gd AA<br>Cluster: 6</div>`)[0];
+                popup_ae0a37714788fbdcfbf67dfc14661c50.setContent(html_697cc3fab2b2aed1d5fb26897b50472d);
+            
+        
+
+        marker_feb80bd0e16af923122854bac3310d71.bindPopup(popup_ae0a37714788fbdcfbf67dfc14661c50)
+        ;
+
+        
+    
+    
+            var marker_9304e9e4f83735bcf99015926e2a72b2 = L.marker(
+                [-6.3725189, 106.8238803],
+                {}
+            ).addTo(marker_cluster_33194577e87f8f5e31cf58b894617ce5);
+        
+    
+            var icon_d6a115eba044054279f253700e008bb3 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "blue", "prefix": "glyphicon"}
+            );
+            marker_9304e9e4f83735bcf99015926e2a72b2.setIcon(icon_d6a115eba044054279f253700e008bb3);
+        
+    
+        var popup_2e7257cba1011680456d7c83b1c54d51 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_6d9213d9e40d049eee30892b7a7c6d04 = $(`<div id="html_6d9213d9e40d049eee30892b7a7c6d04" style="width: 100.0%; height: 100.0%;">Tempat: Depan R 305 Gd AA<br>Cluster: 0</div>`)[0];
+                popup_2e7257cba1011680456d7c83b1c54d51.setContent(html_6d9213d9e40d049eee30892b7a7c6d04);
+            
+        
+
+        marker_9304e9e4f83735bcf99015926e2a72b2.bindPopup(popup_2e7257cba1011680456d7c83b1c54d51)
+        ;
+
+        
+    
+    
+            var marker_c910ae5e9a80c504c9517bae7b1cf3ca = L.marker(
+                [-6.3725189, 106.8238803],
+                {}
+            ).addTo(marker_cluster_33194577e87f8f5e31cf58b894617ce5);
+        
+    
+            var icon_63c7135e674c04d3eee0daede7e062d1 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "green", "prefix": "glyphicon"}
+            );
+            marker_c910ae5e9a80c504c9517bae7b1cf3ca.setIcon(icon_63c7135e674c04d3eee0daede7e062d1);
+        
+    
+        var popup_76df74b8b35c89d42f4dc51c90a33836 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_45b46982aa096eed09d22f53697908ba = $(`<div id="html_45b46982aa096eed09d22f53697908ba" style="width: 100.0%; height: 100.0%;">Tempat: Dalam R 304 Gd AA<br>Cluster: 6</div>`)[0];
+                popup_76df74b8b35c89d42f4dc51c90a33836.setContent(html_45b46982aa096eed09d22f53697908ba);
+            
+        
+
+        marker_c910ae5e9a80c504c9517bae7b1cf3ca.bindPopup(popup_76df74b8b35c89d42f4dc51c90a33836)
+        ;
+
+        
+    
+    
+            var marker_576ea687df9dac4b59316329cb6ab3c3 = L.marker(
+                [-6.3725189, 106.8238803],
+                {}
+            ).addTo(marker_cluster_33194577e87f8f5e31cf58b894617ce5);
+        
+    
+            var icon_1f3b8d5aae21a3cdb7c941f5abe9de9a = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "green", "prefix": "glyphicon"}
+            );
+            marker_576ea687df9dac4b59316329cb6ab3c3.setIcon(icon_1f3b8d5aae21a3cdb7c941f5abe9de9a);
+        
+    
+        var popup_a9f6671cb2ded1a2464887a78a0a58d4 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_b3249fd689a43d455c974741e5fa8049 = $(`<div id="html_b3249fd689a43d455c974741e5fa8049" style="width: 100.0%; height: 100.0%;">Tempat: Depan R 205 Gd AA<br>Cluster: 6</div>`)[0];
+                popup_a9f6671cb2ded1a2464887a78a0a58d4.setContent(html_b3249fd689a43d455c974741e5fa8049);
+            
+        
+
+        marker_576ea687df9dac4b59316329cb6ab3c3.bindPopup(popup_a9f6671cb2ded1a2464887a78a0a58d4)
+        ;
+
+        
+    
+    
+            var marker_f934a5db6e6021ada760cdc9b123d662 = L.marker(
+                [-6.3725189, 106.8238803],
+                {}
+            ).addTo(marker_cluster_33194577e87f8f5e31cf58b894617ce5);
+        
+    
+            var icon_0177529720588b7872de9abf5125a260 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "blue", "prefix": "glyphicon"}
+            );
+            marker_f934a5db6e6021ada760cdc9b123d662.setIcon(icon_0177529720588b7872de9abf5125a260);
+        
+    
+        var popup_ebc1e0d934e738db292476aec76993e2 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_90d8999c1df8284d854d1cd7a1b76f11 = $(`<div id="html_90d8999c1df8284d854d1cd7a1b76f11" style="width: 100.0%; height: 100.0%;">Tempat: Dalam R 204 Gd AA<br>Cluster: 0</div>`)[0];
+                popup_ebc1e0d934e738db292476aec76993e2.setContent(html_90d8999c1df8284d854d1cd7a1b76f11);
+            
+        
+
+        marker_f934a5db6e6021ada760cdc9b123d662.bindPopup(popup_ebc1e0d934e738db292476aec76993e2)
+        ;
+
+        
+    
+    
+            var marker_93643ce6cb6a64c1ec373e3fd7008828 = L.marker(
+                [-6.3725189, 106.8238803],
+                {}
+            ).addTo(marker_cluster_33194577e87f8f5e31cf58b894617ce5);
+        
+    
+            var icon_404e2a1232a33e8f16dbdadc1daee2f3 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "green", "prefix": "glyphicon"}
+            );
+            marker_93643ce6cb6a64c1ec373e3fd7008828.setIcon(icon_404e2a1232a33e8f16dbdadc1daee2f3);
+        
+    
+        var popup_f3220032bfca277ab1069bf8b14021b4 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_4c6746a5b55c5ba8e8574f252407e9ce = $(`<div id="html_4c6746a5b55c5ba8e8574f252407e9ce" style="width: 100.0%; height: 100.0%;">Tempat: Dalam R 205 Gd AA<br>Cluster: 6</div>`)[0];
+                popup_f3220032bfca277ab1069bf8b14021b4.setContent(html_4c6746a5b55c5ba8e8574f252407e9ce);
+            
+        
+
+        marker_93643ce6cb6a64c1ec373e3fd7008828.bindPopup(popup_f3220032bfca277ab1069bf8b14021b4)
+        ;
+
+        
+    
+    
+            var marker_282fb93bf89e33350c030e59ab8ba7a6 = L.marker(
+                [-6.3725189, 106.8238803],
+                {}
+            ).addTo(marker_cluster_33194577e87f8f5e31cf58b894617ce5);
+        
+    
+            var icon_a8c5bf8331c836987937638ba24bcb39 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "blue", "prefix": "glyphicon"}
+            );
+            marker_282fb93bf89e33350c030e59ab8ba7a6.setIcon(icon_a8c5bf8331c836987937638ba24bcb39);
+        
+    
+        var popup_83d6558e16e6cbab81b19aa7e21cf82e = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_c7c929000ca157e115292723bb067563 = $(`<div id="html_c7c929000ca157e115292723bb067563" style="width: 100.0%; height: 100.0%;">Tempat: Depan R 201 Gd AA<br>Cluster: 0</div>`)[0];
+                popup_83d6558e16e6cbab81b19aa7e21cf82e.setContent(html_c7c929000ca157e115292723bb067563);
+            
+        
+
+        marker_282fb93bf89e33350c030e59ab8ba7a6.bindPopup(popup_83d6558e16e6cbab81b19aa7e21cf82e)
+        ;
+
+        
+    
+    
+            var marker_eac3abfb25ce66fa221f38f38b98659e = L.marker(
+                [-6.3725189, 106.8238803],
+                {}
+            ).addTo(marker_cluster_33194577e87f8f5e31cf58b894617ce5);
+        
+    
+            var icon_a363e5f2bf0efc1239a8d18421dc785c = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "purple", "prefix": "glyphicon"}
+            );
+            marker_eac3abfb25ce66fa221f38f38b98659e.setIcon(icon_a363e5f2bf0efc1239a8d18421dc785c);
+        
+    
+        var popup_8aba664f8d06784ea768706155c799c5 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_65c2f871b356bfe26ae66352893b7696 = $(`<div id="html_65c2f871b356bfe26ae66352893b7696" style="width: 100.0%; height: 100.0%;">Tempat: Dalam R 201 Gd AA<br>Cluster: 3</div>`)[0];
+                popup_8aba664f8d06784ea768706155c799c5.setContent(html_65c2f871b356bfe26ae66352893b7696);
+            
+        
+
+        marker_eac3abfb25ce66fa221f38f38b98659e.bindPopup(popup_8aba664f8d06784ea768706155c799c5)
+        ;
+
+        
+    
+    
+            var marker_42a57c12c3429fb366028b840bc8aeaf = L.marker(
+                [-6.3725189, 106.8238803],
+                {}
+            ).addTo(marker_cluster_33194577e87f8f5e31cf58b894617ce5);
+        
+    
+            var icon_af1797c2546c1aa9301eafb05e14033a = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "purple", "prefix": "glyphicon"}
+            );
+            marker_42a57c12c3429fb366028b840bc8aeaf.setIcon(icon_af1797c2546c1aa9301eafb05e14033a);
+        
+    
+        var popup_0eb1af98e78eb7df92b1a6a36d5142aa = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_8fdae3e4d5a5ea5be2bc2e0c73ffb636 = $(`<div id="html_8fdae3e4d5a5ea5be2bc2e0c73ffb636" style="width: 100.0%; height: 100.0%;">Tempat: Dalam R 302 Gd AA<br>Cluster: 3</div>`)[0];
+                popup_0eb1af98e78eb7df92b1a6a36d5142aa.setContent(html_8fdae3e4d5a5ea5be2bc2e0c73ffb636);
+            
+        
+
+        marker_42a57c12c3429fb366028b840bc8aeaf.bindPopup(popup_0eb1af98e78eb7df92b1a6a36d5142aa)
+        ;
+
+        
+    
+    
+            var marker_1735bc12bbebbc1e818adecf48c8e501 = L.marker(
+                [-6.3725189, 106.8238803],
+                {}
+            ).addTo(marker_cluster_33194577e87f8f5e31cf58b894617ce5);
+        
+    
+            var icon_5c3f67c100f601ff59af6c5ebd8376cc = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "blue", "prefix": "glyphicon"}
+            );
+            marker_1735bc12bbebbc1e818adecf48c8e501.setIcon(icon_5c3f67c100f601ff59af6c5ebd8376cc);
+        
+    
+        var popup_286c863910285e9ee0ee39dc4f6c3c4a = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_78aa2e982efaab1c2d6cec29618997f1 = $(`<div id="html_78aa2e982efaab1c2d6cec29618997f1" style="width: 100.0%; height: 100.0%;">Tempat: Dalam R 305 Gd AA<br>Cluster: 0</div>`)[0];
+                popup_286c863910285e9ee0ee39dc4f6c3c4a.setContent(html_78aa2e982efaab1c2d6cec29618997f1);
+            
+        
+
+        marker_1735bc12bbebbc1e818adecf48c8e501.bindPopup(popup_286c863910285e9ee0ee39dc4f6c3c4a)
+        ;
+
+        
+    
+    
+            var marker_010ef0a48fb9b88b3136b9173f4010c9 = L.marker(
+                [-6.3725189, 106.8238803],
+                {}
+            ).addTo(marker_cluster_33194577e87f8f5e31cf58b894617ce5);
+        
+    
+            var icon_6a7cf8dd7f03e2882ffec506911f0736 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "blue", "prefix": "glyphicon"}
+            );
+            marker_010ef0a48fb9b88b3136b9173f4010c9.setIcon(icon_6a7cf8dd7f03e2882ffec506911f0736);
+        
+    
+        var popup_a6001d1d7a3a40e5d46dafd82ab00894 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_951f3d9516ef82857fb0a5856b844698 = $(`<div id="html_951f3d9516ef82857fb0a5856b844698" style="width: 100.0%; height: 100.0%;">Tempat: Dalam R Server Gd AA<br>Cluster: 0</div>`)[0];
+                popup_a6001d1d7a3a40e5d46dafd82ab00894.setContent(html_951f3d9516ef82857fb0a5856b844698);
+            
+        
+
+        marker_010ef0a48fb9b88b3136b9173f4010c9.bindPopup(popup_a6001d1d7a3a40e5d46dafd82ab00894)
+        ;
+
+        
+    
+    
+            var marker_a299031067f251072f42f29c97673eaf = L.marker(
+                [-6.3713204, 106.8232469],
+                {}
+            ).addTo(marker_cluster_33194577e87f8f5e31cf58b894617ce5);
+        
+    
+            var icon_693e491cf972e61021acd178b0f83a1b = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "pink", "prefix": "glyphicon"}
+            );
+            marker_a299031067f251072f42f29c97673eaf.setIcon(icon_693e491cf972e61021acd178b0f83a1b);
+        
+    
+        var popup_40c9c8de21a014d5708f881192aa696a = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_1e9a2be3b4a04d2d0649016664cdcb42 = $(`<div id="html_1e9a2be3b4a04d2d0649016664cdcb42" style="width: 100.0%; height: 100.0%;">Tempat: Depan Layanan Mahasiswa Gd A<br>Cluster: 2</div>`)[0];
+                popup_40c9c8de21a014d5708f881192aa696a.setContent(html_1e9a2be3b4a04d2d0649016664cdcb42);
+            
+        
+
+        marker_a299031067f251072f42f29c97673eaf.bindPopup(popup_40c9c8de21a014d5708f881192aa696a)
+        ;
+
+        
+    
+    
+            var marker_a7133e580cf30bd58249e016ad49d6bc = L.marker(
+                [-6.3713204, 106.8232469],
+                {}
+            ).addTo(marker_cluster_33194577e87f8f5e31cf58b894617ce5);
+        
+    
+            var icon_7b3189e1254569497b334149ab1056d7 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "red", "prefix": "glyphicon"}
+            );
+            marker_a7133e580cf30bd58249e016ad49d6bc.setIcon(icon_7b3189e1254569497b334149ab1056d7);
+        
+    
+        var popup_3a7fa7cfed5a37a1509007684fe8ad2d = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_55b7088fc00dc7ae008a02546894476a = $(`<div id="html_55b7088fc00dc7ae008a02546894476a" style="width: 100.0%; height: 100.0%;">Tempat: Depan R 105 Gd A<br>Cluster: 1</div>`)[0];
+                popup_3a7fa7cfed5a37a1509007684fe8ad2d.setContent(html_55b7088fc00dc7ae008a02546894476a);
+            
+        
+
+        marker_a7133e580cf30bd58249e016ad49d6bc.bindPopup(popup_3a7fa7cfed5a37a1509007684fe8ad2d)
+        ;
+
+        
+    
+    
+            var marker_78bf5c2f2572aeffb0b27b4970f3be77 = L.marker(
+                [-6.3713204, 106.8232469],
+                {}
+            ).addTo(marker_cluster_33194577e87f8f5e31cf58b894617ce5);
+        
+    
+            var icon_d9ddddcaf17f674475196786b190a481 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "red", "prefix": "glyphicon"}
+            );
+            marker_78bf5c2f2572aeffb0b27b4970f3be77.setIcon(icon_d9ddddcaf17f674475196786b190a481);
+        
+    
+        var popup_f5f6b4148eab1dfa9d99469c29c0ddcf = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_415dc822ecccce8beb274ea31ec8050d = $(`<div id="html_415dc822ecccce8beb274ea31ec8050d" style="width: 100.0%; height: 100.0%;">Tempat: Depan R 109 Gd A<br>Cluster: 1</div>`)[0];
+                popup_f5f6b4148eab1dfa9d99469c29c0ddcf.setContent(html_415dc822ecccce8beb274ea31ec8050d);
+            
+        
+
+        marker_78bf5c2f2572aeffb0b27b4970f3be77.bindPopup(popup_f5f6b4148eab1dfa9d99469c29c0ddcf)
+        ;
+
+        
+    
+    
+            var marker_ae2a4a52fa1a14887ef850d082a34729 = L.marker(
+                [-6.3713204, 106.8232469],
+                {}
+            ).addTo(marker_cluster_33194577e87f8f5e31cf58b894617ce5);
+        
+    
+            var icon_1a5b2c75a44f7ca891a311e3f78cf389 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "purple", "prefix": "glyphicon"}
+            );
+            marker_ae2a4a52fa1a14887ef850d082a34729.setIcon(icon_1a5b2c75a44f7ca891a311e3f78cf389);
+        
+    
+        var popup_d998aed3a2cd33ab3fb46ddf18be11e7 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_dc5d62db19a00eafa400564384eb079f = $(`<div id="html_dc5d62db19a00eafa400564384eb079f" style="width: 100.0%; height: 100.0%;">Tempat: Depan Pintu Masuk Gd A<br>Cluster: 3</div>`)[0];
+                popup_d998aed3a2cd33ab3fb46ddf18be11e7.setContent(html_dc5d62db19a00eafa400564384eb079f);
+            
+        
+
+        marker_ae2a4a52fa1a14887ef850d082a34729.bindPopup(popup_d998aed3a2cd33ab3fb46ddf18be11e7)
+        ;
+
+        
+    
+    
+            var marker_6876c436e02f93978135cdbafc9ed513 = L.marker(
+                [-6.3713204, 106.8232469],
+                {}
+            ).addTo(marker_cluster_33194577e87f8f5e31cf58b894617ce5);
+        
+    
+            var icon_df56392fe04184a1e33ff7d593c49e0d = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "red", "prefix": "glyphicon"}
+            );
+            marker_6876c436e02f93978135cdbafc9ed513.setIcon(icon_df56392fe04184a1e33ff7d593c49e0d);
+        
+    
+        var popup_c420c2b3c0b3fd95417a24cf136ae33f = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_e83f65c576cd895e7056b776af57c242 = $(`<div id="html_e83f65c576cd895e7056b776af57c242" style="width: 100.0%; height: 100.0%;">Tempat: Depan R 209 Gd A<br>Cluster: 1</div>`)[0];
+                popup_c420c2b3c0b3fd95417a24cf136ae33f.setContent(html_e83f65c576cd895e7056b776af57c242);
+            
+        
+
+        marker_6876c436e02f93978135cdbafc9ed513.bindPopup(popup_c420c2b3c0b3fd95417a24cf136ae33f)
+        ;
+
+        
+    
+    
+            var marker_60415ac401ed93d951dad7d4b47a80a1 = L.marker(
+                [-6.3713204, 106.8232469],
+                {}
+            ).addTo(marker_cluster_33194577e87f8f5e31cf58b894617ce5);
+        
+    
+            var icon_e030ae05487b971458391c69985e6ab7 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "pink", "prefix": "glyphicon"}
+            );
+            marker_60415ac401ed93d951dad7d4b47a80a1.setIcon(icon_e030ae05487b971458391c69985e6ab7);
+        
+    
+        var popup_33665ff2ade4b3230a9de81b91fe1f86 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_d0501eab109e39220778b543d16b05b0 = $(`<div id="html_d0501eab109e39220778b543d16b05b0" style="width: 100.0%; height: 100.0%;">Tempat: Dalam R 210 Gd A<br>Cluster: 2</div>`)[0];
+                popup_33665ff2ade4b3230a9de81b91fe1f86.setContent(html_d0501eab109e39220778b543d16b05b0);
+            
+        
+
+        marker_60415ac401ed93d951dad7d4b47a80a1.bindPopup(popup_33665ff2ade4b3230a9de81b91fe1f86)
+        ;
+
+        
+    
+    
+            var marker_cd60e8c89fddeaa4096b4844759e1d0b = L.marker(
+                [-6.3713204, 106.8232469],
+                {}
+            ).addTo(marker_cluster_33194577e87f8f5e31cf58b894617ce5);
+        
+    
+            var icon_7e9f55c88c41514356b8b8aca2e99c96 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "red", "prefix": "glyphicon"}
+            );
+            marker_cd60e8c89fddeaa4096b4844759e1d0b.setIcon(icon_7e9f55c88c41514356b8b8aca2e99c96);
+        
+    
+        var popup_36a85a260d521490ae324fa6cdb039d3 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_8ef6680f4a3cdecf8be4bb0e1e2c0cc4 = $(`<div id="html_8ef6680f4a3cdecf8be4bb0e1e2c0cc4" style="width: 100.0%; height: 100.0%;">Tempat: Depan R Dosen Gd A<br>Cluster: 1</div>`)[0];
+                popup_36a85a260d521490ae324fa6cdb039d3.setContent(html_8ef6680f4a3cdecf8be4bb0e1e2c0cc4);
+            
+        
+
+        marker_cd60e8c89fddeaa4096b4844759e1d0b.bindPopup(popup_36a85a260d521490ae324fa6cdb039d3)
+        ;
+
+        
+    
+    
+            var marker_f39e9a764b45902e1e7d3be3230b51d2 = L.marker(
+                [-6.3713204, 106.8232469],
+                {}
+            ).addTo(marker_cluster_33194577e87f8f5e31cf58b894617ce5);
+        
+    
+            var icon_ca4a7c6d843cb280bfa88a6da2477ea3 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "red", "prefix": "glyphicon"}
+            );
+            marker_f39e9a764b45902e1e7d3be3230b51d2.setIcon(icon_ca4a7c6d843cb280bfa88a6da2477ea3);
+        
+    
+        var popup_b8857ba338a9de8a10bac4b1135aea45 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_327bb1b5a5ade404126a185f786f3379 = $(`<div id="html_327bb1b5a5ade404126a185f786f3379" style="width: 100.0%; height: 100.0%;">Tempat: Depan R 212 Gd A<br>Cluster: 1</div>`)[0];
+                popup_b8857ba338a9de8a10bac4b1135aea45.setContent(html_327bb1b5a5ade404126a185f786f3379);
+            
+        
+
+        marker_f39e9a764b45902e1e7d3be3230b51d2.bindPopup(popup_b8857ba338a9de8a10bac4b1135aea45)
+        ;
+
+        
+    
+    
+            var marker_9a43042bc984d1231f724c3b3237ecb7 = L.marker(
+                [-6.3713204, 106.8232469],
+                {}
+            ).addTo(marker_cluster_33194577e87f8f5e31cf58b894617ce5);
+        
+    
+            var icon_2cfe4522f61f716c5f5e6e0b56053e8c = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "purple", "prefix": "glyphicon"}
+            );
+            marker_9a43042bc984d1231f724c3b3237ecb7.setIcon(icon_2cfe4522f61f716c5f5e6e0b56053e8c);
+        
+    
+        var popup_1f8e0df9ac501b66d93dd015663091c4 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_6765eae24cb9483046306cdfaaf51a8a = $(`<div id="html_6765eae24cb9483046306cdfaaf51a8a" style="width: 100.0%; height: 100.0%;">Tempat: Depan R 207 Gd A<br>Cluster: 3</div>`)[0];
+                popup_1f8e0df9ac501b66d93dd015663091c4.setContent(html_6765eae24cb9483046306cdfaaf51a8a);
+            
+        
+
+        marker_9a43042bc984d1231f724c3b3237ecb7.bindPopup(popup_1f8e0df9ac501b66d93dd015663091c4)
+        ;
+
+        
+    
+    
+            var marker_ba4364b8a2e3615d1fd40bbfdb0d0cf6 = L.marker(
+                [-6.3717179, 106.8234553],
+                {}
+            ).addTo(marker_cluster_33194577e87f8f5e31cf58b894617ce5);
+        
+    
+            var icon_674bd65bdd1678d1d9e232dee8a888c3 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "pink", "prefix": "glyphicon"}
+            );
+            marker_ba4364b8a2e3615d1fd40bbfdb0d0cf6.setIcon(icon_674bd65bdd1678d1d9e232dee8a888c3);
+        
+    
+        var popup_02fe9d2bab9584e3aa97ed99661da53f = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_530dc6e2d56984c2af648666f18a922e = $(`<div id="html_530dc6e2d56984c2af648666f18a922e" style="width: 100.0%; height: 100.0%;">Tempat: Depan R 106 Gd B<br>Cluster: 2</div>`)[0];
+                popup_02fe9d2bab9584e3aa97ed99661da53f.setContent(html_530dc6e2d56984c2af648666f18a922e);
+            
+        
+
+        marker_ba4364b8a2e3615d1fd40bbfdb0d0cf6.bindPopup(popup_02fe9d2bab9584e3aa97ed99661da53f)
+        ;
+
+        
+    
+    
+            var marker_58d97fec93fa8d9c8ed36ab429aa6550 = L.marker(
+                [-6.3717179, 106.8234553],
+                {}
+            ).addTo(marker_cluster_33194577e87f8f5e31cf58b894617ce5);
+        
+    
+            var icon_4a93510ead611ffba4e08f1a303e0e3b = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "purple", "prefix": "glyphicon"}
+            );
+            marker_58d97fec93fa8d9c8ed36ab429aa6550.setIcon(icon_4a93510ead611ffba4e08f1a303e0e3b);
+        
+    
+        var popup_f766746e2f59d8f069519883efbcd925 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_8fc942180d03aa9360cf302cc2a9f94c = $(`<div id="html_8fc942180d03aa9360cf302cc2a9f94c" style="width: 100.0%; height: 100.0%;">Tempat: Depan R 109 Gd B<br>Cluster: 3</div>`)[0];
+                popup_f766746e2f59d8f069519883efbcd925.setContent(html_8fc942180d03aa9360cf302cc2a9f94c);
+            
+        
+
+        marker_58d97fec93fa8d9c8ed36ab429aa6550.bindPopup(popup_f766746e2f59d8f069519883efbcd925)
+        ;
+
+        
+    
+    
+            var marker_49541931c061bcb1ff4866c81ef27adb = L.marker(
+                [-6.3717179, 106.8234553],
+                {}
+            ).addTo(marker_cluster_33194577e87f8f5e31cf58b894617ce5);
+        
+    
+            var icon_dff1076f33155f941bbf0e180edc024e = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "pink", "prefix": "glyphicon"}
+            );
+            marker_49541931c061bcb1ff4866c81ef27adb.setIcon(icon_dff1076f33155f941bbf0e180edc024e);
+        
+    
+        var popup_a30bd0da9a68406d5c6d765a5be1e74f = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_bc5d1a9170b2dc7a2988dcd5fd0194bc = $(`<div id="html_bc5d1a9170b2dc7a2988dcd5fd0194bc" style="width: 100.0%; height: 100.0%;">Tempat: Depan R 110 Gd B<br>Cluster: 2</div>`)[0];
+                popup_a30bd0da9a68406d5c6d765a5be1e74f.setContent(html_bc5d1a9170b2dc7a2988dcd5fd0194bc);
+            
+        
+
+        marker_49541931c061bcb1ff4866c81ef27adb.bindPopup(popup_a30bd0da9a68406d5c6d765a5be1e74f)
+        ;
+
+        
+    
+    
+            var marker_b2778a3fd8f375bd928f44860c3c5fce = L.marker(
+                [-6.3717179, 106.8234553],
+                {}
+            ).addTo(marker_cluster_33194577e87f8f5e31cf58b894617ce5);
+        
+    
+            var icon_3a6c1b344083cd15d59f481c71c504ab = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "purple", "prefix": "glyphicon"}
+            );
+            marker_b2778a3fd8f375bd928f44860c3c5fce.setIcon(icon_3a6c1b344083cd15d59f481c71c504ab);
+        
+    
+        var popup_7bd0912227c978675caa5dd1e9c944a3 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_fc91f7e7cb4f4a75acc28b3925b86585 = $(`<div id="html_fc91f7e7cb4f4a75acc28b3925b86585" style="width: 100.0%; height: 100.0%;">Tempat: Depan R 116 Gd B<br>Cluster: 3</div>`)[0];
+                popup_7bd0912227c978675caa5dd1e9c944a3.setContent(html_fc91f7e7cb4f4a75acc28b3925b86585);
+            
+        
+
+        marker_b2778a3fd8f375bd928f44860c3c5fce.bindPopup(popup_7bd0912227c978675caa5dd1e9c944a3)
+        ;
+
+        
+    
+    
+            var marker_20a8ac62f83ace7e842faed7a0b1995f = L.marker(
+                [-6.3717179, 106.8234553],
+                {}
+            ).addTo(marker_cluster_33194577e87f8f5e31cf58b894617ce5);
+        
+    
+            var icon_811007ac7b78b7a52be1faa1683cd082 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "red", "prefix": "glyphicon"}
+            );
+            marker_20a8ac62f83ace7e842faed7a0b1995f.setIcon(icon_811007ac7b78b7a52be1faa1683cd082);
+        
+    
+        var popup_c7f3feefbb89291b9289e8477500d6fc = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_a9675dc8ae16b7c43782c42e04c7720c = $(`<div id="html_a9675dc8ae16b7c43782c42e04c7720c" style="width: 100.0%; height: 100.0%;">Tempat: Pendopo Gd B<br>Cluster: 1</div>`)[0];
+                popup_c7f3feefbb89291b9289e8477500d6fc.setContent(html_a9675dc8ae16b7c43782c42e04c7720c);
+            
+        
+
+        marker_20a8ac62f83ace7e842faed7a0b1995f.bindPopup(popup_c7f3feefbb89291b9289e8477500d6fc)
+        ;
+
+        
+    
+    
+            var marker_d1617407b46b471f835298445545b6c6 = L.marker(
+                [-6.3720697, 106.8234907],
+                {}
+            ).addTo(marker_cluster_33194577e87f8f5e31cf58b894617ce5);
+        
+    
+            var icon_b5fbfcb813b2976e99ebcc304e5d9424 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "red", "prefix": "glyphicon"}
+            );
+            marker_d1617407b46b471f835298445545b6c6.setIcon(icon_b5fbfcb813b2976e99ebcc304e5d9424);
+        
+    
+        var popup_e9f283f7975d9987a3b5edac3da3a1ee = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_28abd0264350a498ed52fcd519018ad9 = $(`<div id="html_28abd0264350a498ed52fcd519018ad9" style="width: 100.0%; height: 100.0%;">Tempat: Depang Gudang ECWS Gd C<br>Cluster: 1</div>`)[0];
+                popup_e9f283f7975d9987a3b5edac3da3a1ee.setContent(html_28abd0264350a498ed52fcd519018ad9);
+            
+        
+
+        marker_d1617407b46b471f835298445545b6c6.bindPopup(popup_e9f283f7975d9987a3b5edac3da3a1ee)
+        ;
+
+        
+    
+    
+            var marker_d5a8829d7d06e6eb3bf892f811fc2cc8 = L.marker(
+                [-6.3720697, 106.8234907],
+                {}
+            ).addTo(marker_cluster_33194577e87f8f5e31cf58b894617ce5);
+        
+    
+            var icon_4e5faa0ab1ccf4c884e81e271c40cc6a = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "purple", "prefix": "glyphicon"}
+            );
+            marker_d5a8829d7d06e6eb3bf892f811fc2cc8.setIcon(icon_4e5faa0ab1ccf4c884e81e271c40cc6a);
+        
+    
+        var popup_45f18a3d0cc7ed3a65d7e63c425a4e37 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_2199f6db48bb81e42c2139d039c23b60 = $(`<div id="html_2199f6db48bb81e42c2139d039c23b60" style="width: 100.0%; height: 100.0%;">Tempat: Tengah Lab Gd C<br>Cluster: 3</div>`)[0];
+                popup_45f18a3d0cc7ed3a65d7e63c425a4e37.setContent(html_2199f6db48bb81e42c2139d039c23b60);
+            
+        
+
+        marker_d5a8829d7d06e6eb3bf892f811fc2cc8.bindPopup(popup_45f18a3d0cc7ed3a65d7e63c425a4e37)
+        ;
+
+        
+    
+    
+            var marker_b36d14810a49a67c6c9bb7204cdb1036 = L.marker(
+                [-6.3720697, 106.8234907],
+                {}
+            ).addTo(marker_cluster_33194577e87f8f5e31cf58b894617ce5);
+        
+    
+            var icon_80c20390f6e96c5b79d50ba92ca31085 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "red", "prefix": "glyphicon"}
+            );
+            marker_b36d14810a49a67c6c9bb7204cdb1036.setIcon(icon_80c20390f6e96c5b79d50ba92ca31085);
+        
+    
+        var popup_6fda97fddd34a8a75c3d6adda099a170 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_a5f9052ee39113500cd49f619b75c865 = $(`<div id="html_a5f9052ee39113500cd49f619b75c865" style="width: 100.0%; height: 100.0%;">Tempat: Depan R Dosen Gd C<br>Cluster: 1</div>`)[0];
+                popup_6fda97fddd34a8a75c3d6adda099a170.setContent(html_a5f9052ee39113500cd49f619b75c865);
+            
+        
+
+        marker_b36d14810a49a67c6c9bb7204cdb1036.bindPopup(popup_6fda97fddd34a8a75c3d6adda099a170)
+        ;
+
+        
+    
+    
+            var marker_eb80f6af19d4c63b037cd69f23ae40f4 = L.marker(
+                [-6.372417, 106.8233591],
+                {}
+            ).addTo(marker_cluster_33194577e87f8f5e31cf58b894617ce5);
+        
+    
+            var icon_9f9112f9c040b356a9a9bd31ba3cb385 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "blue", "prefix": "glyphicon"}
+            );
+            marker_eb80f6af19d4c63b037cd69f23ae40f4.setIcon(icon_9f9112f9c040b356a9a9bd31ba3cb385);
+        
+    
+        var popup_650ac422c504387ac49245e2788d1986 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_5ca048478fbf4e6c5239b050a194705a = $(`<div id="html_5ca048478fbf4e6c5239b050a194705a" style="width: 100.0%; height: 100.0%;">Tempat: Depan R 104 Gd I<br>Cluster: 0</div>`)[0];
+                popup_650ac422c504387ac49245e2788d1986.setContent(html_5ca048478fbf4e6c5239b050a194705a);
+            
+        
+
+        marker_eb80f6af19d4c63b037cd69f23ae40f4.bindPopup(popup_650ac422c504387ac49245e2788d1986)
+        ;
+
+        
+    
+    
+            var marker_a6fc361669455aa43da58a4dcca0b2fa = L.marker(
+                [-6.372417, 106.8233591],
+                {}
+            ).addTo(marker_cluster_33194577e87f8f5e31cf58b894617ce5);
+        
+    
+            var icon_9e5b9b3bd79494774dbaf5c98d3dcd4a = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "green", "prefix": "glyphicon"}
+            );
+            marker_a6fc361669455aa43da58a4dcca0b2fa.setIcon(icon_9e5b9b3bd79494774dbaf5c98d3dcd4a);
+        
+    
+        var popup_f38aff8a08bb8ab1b7d22bcd0a3ec643 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_82d2f889927bb1db65920464c1232189 = $(`<div id="html_82d2f889927bb1db65920464c1232189" style="width: 100.0%; height: 100.0%;">Tempat: Tengah Lab Gd I<br>Cluster: 6</div>`)[0];
+                popup_f38aff8a08bb8ab1b7d22bcd0a3ec643.setContent(html_82d2f889927bb1db65920464c1232189);
+            
+        
+
+        marker_a6fc361669455aa43da58a4dcca0b2fa.bindPopup(popup_f38aff8a08bb8ab1b7d22bcd0a3ec643)
+        ;
+
+        
+    
+    
+            var marker_6ccb585791f7c531a21a94e63cba0435 = L.marker(
+                [-6.372417, 106.8233591],
+                {}
+            ).addTo(marker_cluster_33194577e87f8f5e31cf58b894617ce5);
+        
+    
+            var icon_05e662dae36007c018f22b31c8bd93d3 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "blue", "prefix": "glyphicon"}
+            );
+            marker_6ccb585791f7c531a21a94e63cba0435.setIcon(icon_05e662dae36007c018f22b31c8bd93d3);
+        
+    
+        var popup_28671a27ebd6e7ce10a012de9063d642 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_bb4210c33d13f2c6f92d46932c6a3167 = $(`<div id="html_bb4210c33d13f2c6f92d46932c6a3167" style="width: 100.0%; height: 100.0%;">Tempat: Depan Lab Gd I<br>Cluster: 0</div>`)[0];
+                popup_28671a27ebd6e7ce10a012de9063d642.setContent(html_bb4210c33d13f2c6f92d46932c6a3167);
+            
+        
+
+        marker_6ccb585791f7c531a21a94e63cba0435.bindPopup(popup_28671a27ebd6e7ce10a012de9063d642)
+        ;
+
+        
+    
+    
+            var marker_4450a41e1fc64a294c7c7934f71e5986 = L.marker(
+                [-6.3709326, 106.8233214],
+                {}
+            ).addTo(marker_cluster_33194577e87f8f5e31cf58b894617ce5);
+        
+    
+            var icon_c0bde4ba7dfc553e4bb09713620af9bf = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "purple", "prefix": "glyphicon"}
+            );
+            marker_4450a41e1fc64a294c7c7934f71e5986.setIcon(icon_c0bde4ba7dfc553e4bb09713620af9bf);
+        
+    
+        var popup_77598f486780c14f72c1f0a5ec404675 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_e6ea7d4c6595488106240baf03f64ab1 = $(`<div id="html_e6ea7d4c6595488106240baf03f64ab1" style="width: 100.0%; height: 100.0%;">Tempat: Depan R 111 Gd F<br>Cluster: 3</div>`)[0];
+                popup_77598f486780c14f72c1f0a5ec404675.setContent(html_e6ea7d4c6595488106240baf03f64ab1);
+            
+        
+
+        marker_4450a41e1fc64a294c7c7934f71e5986.bindPopup(popup_77598f486780c14f72c1f0a5ec404675)
+        ;
+
+        
+    
+    
+            var marker_948ddac9f28fb91e7dbd0737088854fb = L.marker(
+                [-6.3709326, 106.8233214],
+                {}
+            ).addTo(marker_cluster_33194577e87f8f5e31cf58b894617ce5);
+        
+    
+            var icon_7efd391d5aed64ba03c365370eb58e9a = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "purple", "prefix": "glyphicon"}
+            );
+            marker_948ddac9f28fb91e7dbd0737088854fb.setIcon(icon_7efd391d5aed64ba03c365370eb58e9a);
+        
+    
+        var popup_f6b53dcb9f0c7e9757b61bc66c8e6a1b = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_bc33e872743d2df86287d20f633d979a = $(`<div id="html_bc33e872743d2df86287d20f633d979a" style="width: 100.0%; height: 100.0%;">Tempat: Depan R 109 Gd F<br>Cluster: 3</div>`)[0];
+                popup_f6b53dcb9f0c7e9757b61bc66c8e6a1b.setContent(html_bc33e872743d2df86287d20f633d979a);
+            
+        
+
+        marker_948ddac9f28fb91e7dbd0737088854fb.bindPopup(popup_f6b53dcb9f0c7e9757b61bc66c8e6a1b)
+        ;
+
+        
+    
+    
+            var marker_a78ff511f4dfc153c5cba14bee8ea1cb = L.marker(
+                [-6.3709326, 106.8233214],
+                {}
+            ).addTo(marker_cluster_33194577e87f8f5e31cf58b894617ce5);
+        
+    
+            var icon_3aac0eff64d03aec4035f2c30f28c2dc = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "purple", "prefix": "glyphicon"}
+            );
+            marker_a78ff511f4dfc153c5cba14bee8ea1cb.setIcon(icon_3aac0eff64d03aec4035f2c30f28c2dc);
+        
+    
+        var popup_f91b3caf4dfe1b2aedafc6dd84eb5289 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_ca61a3e6e2d24cbecc88333bf8c2eebf = $(`<div id="html_ca61a3e6e2d24cbecc88333bf8c2eebf" style="width: 100.0%; height: 100.0%;">Tempat: Depan R 106 Gd F<br>Cluster: 3</div>`)[0];
+                popup_f91b3caf4dfe1b2aedafc6dd84eb5289.setContent(html_ca61a3e6e2d24cbecc88333bf8c2eebf);
+            
+        
+
+        marker_a78ff511f4dfc153c5cba14bee8ea1cb.bindPopup(popup_f91b3caf4dfe1b2aedafc6dd84eb5289)
+        ;
+
+        
+    
+    
+            var marker_3699ce1267bf9cff066c3a0ac444b7d1 = L.marker(
+                [-6.3709326, 106.8233214],
+                {}
+            ).addTo(marker_cluster_33194577e87f8f5e31cf58b894617ce5);
+        
+    
+            var icon_7eb4653f711035bad69b344d3ef998d1 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "black", "prefix": "glyphicon"}
+            );
+            marker_3699ce1267bf9cff066c3a0ac444b7d1.setIcon(icon_7eb4653f711035bad69b344d3ef998d1);
+        
+    
+        var popup_d27f252125a969bf4bac1c5003a4ed42 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_2f77914bffa8750b4ff80b62a8c6bd22 = $(`<div id="html_2f77914bffa8750b4ff80b62a8c6bd22" style="width: 100.0%; height: 100.0%;">Tempat: Depan R Dosen Gd F<br>Cluster: 4</div>`)[0];
+                popup_d27f252125a969bf4bac1c5003a4ed42.setContent(html_2f77914bffa8750b4ff80b62a8c6bd22);
+            
+        
+
+        marker_3699ce1267bf9cff066c3a0ac444b7d1.bindPopup(popup_d27f252125a969bf4bac1c5003a4ed42)
+        ;
+
+        
+    
+    
+            var marker_f04c4541f80136b01b7f5f729b991dd5 = L.marker(
+                [-6.3709326, 106.8233214],
+                {}
+            ).addTo(marker_cluster_33194577e87f8f5e31cf58b894617ce5);
+        
+    
+            var icon_a9dba754019910635c2743c421e802af = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "red", "prefix": "glyphicon"}
+            );
+            marker_f04c4541f80136b01b7f5f729b991dd5.setIcon(icon_a9dba754019910635c2743c421e802af);
+        
+    
+        var popup_44a473be2aa8c805da65b7b11010c76c = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_32a0139bbb50a0925df215dcda6f7de9 = $(`<div id="html_32a0139bbb50a0925df215dcda6f7de9" style="width: 100.0%; height: 100.0%;">Tempat: Depan R 206 Gd F<br>Cluster: 1</div>`)[0];
+                popup_44a473be2aa8c805da65b7b11010c76c.setContent(html_32a0139bbb50a0925df215dcda6f7de9);
+            
+        
+
+        marker_f04c4541f80136b01b7f5f729b991dd5.bindPopup(popup_44a473be2aa8c805da65b7b11010c76c)
+        ;
+
+        
+    
+    
+            var marker_11b58f41c0f520a7db084b251f0abe76 = L.marker(
+                [-6.3709326, 106.8233214],
+                {}
+            ).addTo(marker_cluster_33194577e87f8f5e31cf58b894617ce5);
+        
+    
+            var icon_aaefdbaa683099d96bb04c8eeb6aa4bc = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "black", "prefix": "glyphicon"}
+            );
+            marker_11b58f41c0f520a7db084b251f0abe76.setIcon(icon_aaefdbaa683099d96bb04c8eeb6aa4bc);
+        
+    
+        var popup_0b2dcc10e5d9d75024b258d697cdc655 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_7f3eaa9c8699ad2705d46af4fa55be50 = $(`<div id="html_7f3eaa9c8699ad2705d46af4fa55be50" style="width: 100.0%; height: 100.0%;">Tempat: Depan R 210 Gd F<br>Cluster: 4</div>`)[0];
+                popup_0b2dcc10e5d9d75024b258d697cdc655.setContent(html_7f3eaa9c8699ad2705d46af4fa55be50);
+            
+        
+
+        marker_11b58f41c0f520a7db084b251f0abe76.bindPopup(popup_0b2dcc10e5d9d75024b258d697cdc655)
+        ;
+
+        
+    
+    
+            var marker_fdb1b21bdd91ea3e6102dace6f532ad5 = L.marker(
+                [-6.3709326, 106.8233214],
+                {}
+            ).addTo(marker_cluster_33194577e87f8f5e31cf58b894617ce5);
+        
+    
+            var icon_8249cc1c798f3957fb635b4727c7c004 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "blue", "prefix": "glyphicon"}
+            );
+            marker_fdb1b21bdd91ea3e6102dace6f532ad5.setIcon(icon_8249cc1c798f3957fb635b4727c7c004);
+        
+    
+        var popup_e2e96bb9c43a07c8bdca77da06529da7 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_d8d06afb318911267f93a44b7cf519f8 = $(`<div id="html_d8d06afb318911267f93a44b7cf519f8" style="width: 100.0%; height: 100.0%;">Tempat: Depan R 313 Gd F<br>Cluster: 0</div>`)[0];
+                popup_e2e96bb9c43a07c8bdca77da06529da7.setContent(html_d8d06afb318911267f93a44b7cf519f8);
+            
+        
+
+        marker_fdb1b21bdd91ea3e6102dace6f532ad5.bindPopup(popup_e2e96bb9c43a07c8bdca77da06529da7)
+        ;
+
+        
+    
+    
+            var marker_11287ab7cc33d234f8626b7372d53cc1 = L.marker(
+                [-6.3709326, 106.8233214],
+                {}
+            ).addTo(marker_cluster_33194577e87f8f5e31cf58b894617ce5);
+        
+    
+            var icon_e116d52ffe2010ede17d545e8f712738 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "blue", "prefix": "glyphicon"}
+            );
+            marker_11287ab7cc33d234f8626b7372d53cc1.setIcon(icon_e116d52ffe2010ede17d545e8f712738);
+        
+    
+        var popup_a5a5e3787fd7463e6e9d01132cb9f8d2 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_bd346c176ada54e958770449b93eddbe = $(`<div id="html_bd346c176ada54e958770449b93eddbe" style="width: 100.0%; height: 100.0%;">Tempat: Depan Lab Komputer Gd F<br>Cluster: 0</div>`)[0];
+                popup_a5a5e3787fd7463e6e9d01132cb9f8d2.setContent(html_bd346c176ada54e958770449b93eddbe);
+            
+        
+
+        marker_11287ab7cc33d234f8626b7372d53cc1.bindPopup(popup_a5a5e3787fd7463e6e9d01132cb9f8d2)
+        ;
+
+        
+    
+    
+            var marker_9f989f67dd194e290862c8d5a569e190 = L.marker(
+                [-6.3709326, 106.8233214],
+                {}
+            ).addTo(marker_cluster_33194577e87f8f5e31cf58b894617ce5);
+        
+    
+            var icon_122e9c28a6beb01200ccaf027082c429 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "green", "prefix": "glyphicon"}
+            );
+            marker_9f989f67dd194e290862c8d5a569e190.setIcon(icon_122e9c28a6beb01200ccaf027082c429);
+        
+    
+        var popup_a187c8fff69882bf3c1fad3e72910bde = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_11e5a03ddc4d63cb1e9f4b917a511166 = $(`<div id="html_11e5a03ddc4d63cb1e9f4b917a511166" style="width: 100.0%; height: 100.0%;">Tempat: Depan R 301 Gd F<br>Cluster: 6</div>`)[0];
+                popup_a187c8fff69882bf3c1fad3e72910bde.setContent(html_11e5a03ddc4d63cb1e9f4b917a511166);
+            
+        
+
+        marker_9f989f67dd194e290862c8d5a569e190.bindPopup(popup_a187c8fff69882bf3c1fad3e72910bde)
+        ;
+
+        
+    
+    
+            marker_cluster_33194577e87f8f5e31cf58b894617ce5.addTo(map_a3520191679fc65bbe1e73b0b06ee88e);
+        
+</script>
+</html>
